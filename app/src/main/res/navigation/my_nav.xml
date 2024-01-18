@@ -7,29 +7,77 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.mohassan.homecompass.ui.SplashFragment"
+        android:name="com.mohassan.homecompass.ui.onboarding.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_onboarding1Fragment"
             app:destination="@id/onboarding1Fragment" />
     </fragment>
     <fragment
         android:id="@+id/onboarding1Fragment"
-        android:name="com.mohassan.homecompass.ui.Onboarding1Fragment"
+        android:name="com.mohassan.homecompass.ui.onboarding.Onboarding1Fragment"
         android:label="Onboarding1Fragment"
         tools:layout="@layout/fragment_onboarding1">
         <action
             android:id="@+id/action_onboarding1Fragment_to_onboarding2Fragment"
             app:destination="@id/onboarding2Fragment" />
+        <action
+            android:id="@+id/action_onboarding1Fragment_to_signUpOrSignInFragment"
+            app:destination="@id/signUpOrSignInFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboarding2Fragment"
-        android:name="com.mohassan.homecompass.ui.Onboarding2Fragment"
+        android:name="com.mohassan.homecompass.ui.onboarding.Onboarding2Fragment"
         android:label="Onboarding2Fragment"
         tools:layout="@layout/fragment_onboarding2">
         <action
             android:id="@+id/action_onboarding2Fragment_to_onboarding1Fragment"
             app:destination="@id/onboarding1Fragment" />
+        <action
+            android:id="@+id/action_onboarding2Fragment_to_signUpOrSignInFragment"
+            app:destination="@id/signUpOrSignInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpOrSignInFragment"
+        android:name="com.mohassan.homecompass.ui.registration.SignUpOrSignInFragment"
+        android:label="SignUpOrSignInFragment"
+        tools:layout="@layout/fragment_signup_or_signin" >
+        <action
+            android:id="@+id/action_signUpOrSignInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signUpOrSignInFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.mohassan.homecompass.ui.registration.signUp.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signUpOrSignInFragment"
+            app:destination="@id/signUpOrSignInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.mohassan.homecompass.ui.registration.signIn.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpOrSignInFragment"
+            app:destination="@id/signUpOrSignInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.mohassan.homecompass.ui.registration.forgetPassword.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment"
+        tools:layout="@layout/fragment_forget_pass" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
 </navigation>

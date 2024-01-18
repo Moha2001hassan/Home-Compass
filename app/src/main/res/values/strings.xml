@@ -7,4 +7,15 @@
     <string name="skip_word">Skip</string>
     <string name="next_word">Next</string>
     <string name="onboarding_2_text">Through Home Compass, you can find a missing person by uploading a photo of that person</string>
+    <string name="sign_up">Sign up</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forget_your_password">Forget your password?</string>
+    <string name="enter_your_email_and_we_will_send_the_instruction">Enter your email and we will send the instruction</string>
+    <string name="send">Send</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="continue_with">Continue with</string>
 </resources>
