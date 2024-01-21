@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.ui.onboarding
+package com.mohassan.homecompass.home_compass_feature.presentation.fragments
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.utils.Constants.SPLASH_SCREEN_DELAY
+import com.mohassan.homecompass.core.utils.Constants.SPLASH_SCREEN_DELAY
 
 class SplashFragment : Fragment() {
 

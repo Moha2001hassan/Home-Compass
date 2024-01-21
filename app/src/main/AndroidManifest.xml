@@ -13,10 +13,10 @@
         android:theme="@style/Theme.HomeCompass"
         tools:targetApi="31" >
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".home_compass_feature.presentation.activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.IntroActivity"
+            android:name=".home_compass_feature.presentation.activities.IntroActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
