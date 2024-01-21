@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.ui.onboarding
+package com.mohassan.homecompass.home_compass_feature.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,29 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.databinding.FragmentOnboarding1Binding
+import com.mohassan.homecompass.databinding.FragmentForgetPassBinding
 
-class Onboarding1Fragment : Fragment() {
+class ForgetPasswordFragment : Fragment() {
 
-    private lateinit var binding: FragmentOnboarding1Binding
+    private lateinit var binding: FragmentForgetPassBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentOnboarding1Binding.inflate(inflater, container, false)
+        binding = FragmentForgetPassBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.action_onboarding1Fragment_to_onboarding2Fragment)
-        }
-
-        binding.btnSkip.setOnClickListener {
-            findNavController().navigate(R.id.action_onboarding1Fragment_to_signUpOrSignInFragment)
+        binding.imgBack.setOnClickListener {
+            findNavController().navigate(R.id.action_forgetPasswordFragment_to_signInFragment)
         }
     }
 

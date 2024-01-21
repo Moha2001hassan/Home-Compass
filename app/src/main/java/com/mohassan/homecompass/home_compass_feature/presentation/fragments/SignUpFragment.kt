@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.ui.registration
+package com.mohassan.homecompass.home_compass_feature.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,29 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.databinding.FragmentSignupOrSigninBinding
+import com.mohassan.homecompass.databinding.FragmentSignUpBinding
 
-class SignUpOrSignInFragment : Fragment() {
+class SignUpFragment : Fragment() {
 
-    private lateinit var binding: FragmentSignupOrSigninBinding
+    private lateinit var binding: FragmentSignUpBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentSignupOrSigninBinding.inflate(inflater, container, false)
+        binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpOrSignInFragment_to_signUpFragment)
-        }
-
-        binding.txtToSignIn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpOrSignInFragment_to_signInFragment)
+        binding.imgBack.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_signUpOrSignInFragment)
         }
     }
 
