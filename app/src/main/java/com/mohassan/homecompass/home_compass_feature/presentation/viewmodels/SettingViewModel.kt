@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ChatBotViewModel : ViewModel() {
+class SettingViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is ChatBot Fragment"
+        value = "This is Setting Fragment"
     }
     val text: LiveData<String> = _text
 }

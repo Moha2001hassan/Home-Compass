@@ -7,19 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.ChatBotFragment"
-        android:label="@string/menu_home"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.HomeFragment"
+        android:label=""
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.HomeFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_chatBot"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.ChatBotFragment"
+        android:label=""
+        tools:layout="@layout/fragment_chatbot" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_searchMissing"
         android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.SearchMissingFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:label=""
+        tools:layout="@layout/fragment_search_missing" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.SettingFragment"
+        android:label=""
+        tools:layout="@layout/fragment_setting" />
 </navigation>

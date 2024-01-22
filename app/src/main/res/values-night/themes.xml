@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.HomeCompass" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.HomeCompass" parent="Base.Theme.HomeCompass">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
