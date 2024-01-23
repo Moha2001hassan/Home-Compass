@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.home_compass_feature.presentation.activities
+package com.mohassan.homecompass.login_register_feature.presentation.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

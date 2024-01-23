@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mohassan.homecompass.databinding.FragmentChatbotBinding
-import com.mohassan.homecompass.home_compass_feature.presentation.viewmodels.ChatBotViewModel
+import com.mohassan.homecompass.login_register_feature.presentation.viewmodels.ChatBotViewModel
 
 class ChatBotFragment : Fragment() {
 
@@ -24,7 +24,7 @@ class ChatBotFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val chatBotViewModel =
-            ViewModelProvider(this).get(ChatBotViewModel::class.java)
+            ViewModelProvider(this)[ChatBotViewModel::class.java]
 
         _binding = FragmentChatbotBinding.inflate(inflater, container, false)
         val root: View = binding.root

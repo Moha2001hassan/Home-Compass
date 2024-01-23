@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mohassan.homecompass.databinding.FragmentSearchMissingBinding
-import com.mohassan.homecompass.home_compass_feature.presentation.viewmodels.SearchMissingViewModel
+import com.mohassan.homecompass.login_register_feature.presentation.viewmodels.SearchMissingViewModel
 
 class SearchMissingFragment : Fragment() {
 
@@ -24,7 +24,7 @@ class SearchMissingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val searchMissingViewModel =
-            ViewModelProvider(this).get(SearchMissingViewModel::class.java)
+            ViewModelProvider(this)[SearchMissingViewModel::class.java]
 
         _binding = FragmentSearchMissingBinding.inflate(inflater, container, false)
         val root: View = binding.root
