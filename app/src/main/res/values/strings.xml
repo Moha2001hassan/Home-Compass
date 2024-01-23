@@ -41,16 +41,16 @@
     <string name="my_account">My Account</string>
     <string name="john_wick">John Wick</string>
     <string name="lorem_ipsum_dolor_sit_amet">Lorem ipsum dolor sit amet</string>
-    <string name="email">Email:</string>
+    <string name="email">Email: </string>
     <string name="gojn_gmail_com">gojn@gmail.com</string>
-    <string name="address">Address:</string>
+    <string name="address">Address: </string>
     <string name="_220_street">220 **** street</string>
-    <string name="phoneNumber">Phone number:</string>
+    <string name="phoneNumber">Phone number: </string>
     <string name="_777_888_999">777-888-999</string>
-    <string name="profile_link">Profile link:</string>
+    <string name="profile_link">Profile link: </string>
     <string name="https_www_figma_com">https://www.figma.com</string>
-    <string name="birthday">Birthday:</string>
+    <string name="birthday">Birthday: </string>
     <string name="_19_9_2004">19/9/2004</string>
-    <string name="gender">Gender:</string>
+    <string name="gender">Gender: </string>
     <string name="male">Male</string>
 </resources>

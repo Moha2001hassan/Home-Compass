@@ -1,5 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#E4E9EF"/>
-    <corners android:radius="4dp"/>
-</shape>
+<?xml version="1.0" encoding="utf-8"?><!--<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <solid android:color="#E4E9EF"/>-->
+<!--    <corners android:radius="4dp"/>-->
+<!--</shape>-->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#66497174" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+    <!-- Default state -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E4E9EF" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</selector>

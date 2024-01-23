@@ -1,174 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <ImageView
-        android:id="@+id/ivBackArrow"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/ic_back_arrow"
-        app:layout_constraintBottom_toBottomOf="@id/tvMyAccount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/g_gray700"
-        tools:ignore="ContentDescription" />
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tvMyAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/my_account"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/ivBackArrow"
         app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toEndOf="@id/ivBackArrow"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_account"
-        android:layout_marginTop="50dp"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ic_account"
-        app:layout_constraintTop_toBottomOf="@id/tvMyAccount"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-  <TextView
-      android:id="@+id/tvAccountName"
-      app:layout_constraintTop_toBottomOf="@id/iv_account"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="10dp"
-      android:text="@string/john_wick"
-      android:textStyle="bold"
-      android:textSize="20sp"/>
+        app:layout_constraintTop_toBottomOf="@id/tvMyAccount" />
+
+    <TextView
+        android:id="@+id/tvAccountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="@string/john_wick"
+        android:textColor="@color/olive_teal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_account" />
+
     <TextView
         android:id="@+id/tvDescription"
-        app:layout_constraintTop_toBottomOf="@id/tvAccountName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lorem_ipsum_dolor_sit_amet"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        android:textColor="@color/g_blue_gray200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAccountName" />
+
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDescription"
-        android:textSize="17sp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
+        android:text="@string/email"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/email"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/gojn_gmail_com"
+        android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@id/tvEmail"
         app:layout_constraintBottom_toBottomOf="@id/tvEmail"
         app:layout_constraintStart_toEndOf="@id/tvEmail"
-        android:text="@string/gojn_gmail_com"/>
+        app:layout_constraintTop_toTopOf="@id/tvEmail" />
+
     <TextView
         android:id="@+id/tvAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvEmail"
-        android:textSize="17sp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:text="@string/address"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/address"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/_220_street"
+        android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@id/tvAddress"
         app:layout_constraintBottom_toBottomOf="@id/tvAddress"
         app:layout_constraintStart_toEndOf="@id/tvAddress"
-        android:text="@string/_220_street"/>
+        app:layout_constraintTop_toTopOf="@id/tvAddress" />
+
     <TextView
         android:id="@+id/tvPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAddress"
-        android:textSize="17sp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:text="@string/phoneNumber"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/phoneNumber"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/_777_888_999"
+        android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@id/tvPhoneNumber"
         app:layout_constraintBottom_toBottomOf="@id/tvPhoneNumber"
         app:layout_constraintStart_toEndOf="@id/tvPhoneNumber"
-        android:text="@string/_777_888_999"/>
+        app:layout_constraintTop_toTopOf="@id/tvPhoneNumber" />
+
     <TextView
         android:id="@+id/tvProfileLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber"
-        android:textSize="17sp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:text="@string/profile_link"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/profile_link"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/https_www_figma_com"
+        android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@id/tvProfileLink"
         app:layout_constraintBottom_toBottomOf="@id/tvProfileLink"
         app:layout_constraintStart_toEndOf="@id/tvProfileLink"
-        android:text="@string/https_www_figma_com"/>
+        app:layout_constraintTop_toTopOf="@id/tvProfileLink" />
+
     <TextView
         android:id="@+id/tvBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvProfileLink"
-        android:textSize="17sp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
+        android:text="@string/birthday"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/birthday"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/tvProfileLink" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/_19_9_2004"
+        android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@id/tvBirthday"
         app:layout_constraintBottom_toBottomOf="@id/tvBirthday"
         app:layout_constraintStart_toEndOf="@id/tvBirthday"
-        android:text="@string/_19_9_2004"/>
+        app:layout_constraintTop_toTopOf="@id/tvBirthday" />
+
     <TextView
         android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvBirthday"
-        android:textSize="17sp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:text="@string/gender"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/gender"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/tvBirthday" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/male"
+        android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="@id/tvGender"
         app:layout_constraintBottom_toBottomOf="@id/tvGender"
         app:layout_constraintStart_toEndOf="@id/tvGender"
-        android:text="@string/male"/>
+        app:layout_constraintTop_toTopOf="@id/tvGender" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="26dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
