@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.mohassan.homecompass.R
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.login_register_feature.presentation.viewmodels.SearchMissingViewModel
 
@@ -33,6 +35,16 @@ class SettingFragment : Fragment() {
 //            textView.text = it
 //        }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.linearAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_setting_to_accountFragment)
+        }
+        binding.ivBackArrow.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onDestroyView() {
