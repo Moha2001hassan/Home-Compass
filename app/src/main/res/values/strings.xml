@@ -19,10 +19,8 @@
     <string name="name">Name</string>
     <string name="continue_with">Continue with</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
     <string name="nav_header_title">John</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_subtitle">example@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -31,10 +29,4 @@
     <string name="menu_searchMissing">Search Missing</string>
     <string name="menu_setting">Setting</string>
     <string name="menu_logout">Logout</string>
-
-    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
 </resources>

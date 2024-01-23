@@ -24,14 +24,14 @@ class SettingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
+        val settingViewModel =
             ViewModelProvider(this).get(SearchMissingViewModel::class.java)
 
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
+        settingViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

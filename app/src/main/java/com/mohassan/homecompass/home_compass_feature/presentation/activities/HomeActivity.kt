@@ -20,17 +20,14 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.toolbar.setNavigationIcon(R.drawable.ic_list)
-        binding.toolbar.title = ""
-        setSupportActionBar(binding.toolbar)
-
         // Set custom icon for navigation drawer
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_list)
+        setSupportActionBar(binding.toolbar)
 
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
