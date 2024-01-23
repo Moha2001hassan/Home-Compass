@@ -22,7 +22,7 @@
         android:id="@+id/tvMyAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Account"
+        android:text="@string/my_account"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/ivArrow"
@@ -46,7 +46,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginVertical="10dp"
-      android:text="John Wick"
+      android:text="@string/john_wick"
       android:textStyle="bold"
       android:textSize="20sp"/>
     <TextView
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet"
+        android:text="@string/lorem_ipsum_dolor_sit_amet"
         android:textSize="15sp"/>
     <TextView
         android:id="@+id/tvEmail"
@@ -68,7 +68,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:textStyle="bold"
-        android:text="Email: "/>
+        android:text="@string/email"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="@id/tvEmail"
         app:layout_constraintBottom_toBottomOf="@id/tvEmail"
         app:layout_constraintStart_toEndOf="@id/tvEmail"
-        android:text="gojn@gmail.com"/>
+        android:text="@string/gojn_gmail_com"/>
     <TextView
         android:id="@+id/tvAddress"
         android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:text="Address: "/>
+        android:text="@string/address"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="@id/tvAddress"
         app:layout_constraintBottom_toBottomOf="@id/tvAddress"
         app:layout_constraintStart_toEndOf="@id/tvAddress"
-        android:text="220 **** street"/>
+        android:text="@string/_220_street"/>
     <TextView
         android:id="@+id/tvPhoneNumber"
         android:layout_width="wrap_content"
@@ -106,7 +106,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:text="Phone number: "/>
+        android:text="@string/phoneNumber"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toTopOf="@id/tvPhoneNumber"
         app:layout_constraintBottom_toBottomOf="@id/tvPhoneNumber"
         app:layout_constraintStart_toEndOf="@id/tvPhoneNumber"
-        android:text="777-888-999"/>
+        android:text="@string/_777_888_999"/>
     <TextView
         android:id="@+id/tvProfileLink"
         android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:text="Profile link: "/>
+        android:text="@string/profile_link"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
         app:layout_constraintTop_toTopOf="@id/tvProfileLink"
         app:layout_constraintBottom_toBottomOf="@id/tvProfileLink"
         app:layout_constraintStart_toEndOf="@id/tvProfileLink"
-        android:text="https://www.figma.com"/>
+        android:text="@string/https_www_figma_com"/>
     <TextView
         android:id="@+id/tvBirthday"
         android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:textStyle="bold"
-        android:text="Birthday:  "/>
+        android:text="@string/birthday"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
         app:layout_constraintTop_toTopOf="@id/tvBirthday"
         app:layout_constraintBottom_toBottomOf="@id/tvBirthday"
         app:layout_constraintStart_toEndOf="@id/tvBirthday"
-        android:text="19/9/2004"/>
+        android:text="@string/_19_9_2004"/>
     <TextView
         android:id="@+id/tvGender"
         android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:text="Gender: "/>
+        android:text="@string/gender"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -171,5 +171,5 @@
         app:layout_constraintTop_toTopOf="@id/tvGender"
         app:layout_constraintBottom_toBottomOf="@id/tvGender"
         app:layout_constraintStart_toEndOf="@id/tvGender"
-        android:text="Male"/>
+        android:text="@string/male"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
