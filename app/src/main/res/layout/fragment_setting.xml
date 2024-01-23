@@ -5,17 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="70dp"
     tools:context=".home_compass_feature.presentation.fragments.SettingFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="70dp"
-            android:id="@+id/constraintParent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/ivArrow"
@@ -316,9 +307,5 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.96" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
