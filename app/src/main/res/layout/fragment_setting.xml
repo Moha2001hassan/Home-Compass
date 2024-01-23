@@ -9,7 +9,7 @@
     tools:context=".home_compass_feature.presentation.fragments.SettingFragment">
 
             <ImageView
-                android:id="@+id/ivArrow"
+                android:id="@+id/ivBackArrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="10dp"
@@ -29,7 +29,7 @@
                 android:textSize="20sp"
 
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/ivArrow"
+                app:layout_constraintBottom_toBottomOf="@id/ivBackArrow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/guideline1" />
 

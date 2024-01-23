@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
@@ -42,6 +41,9 @@ class SettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.linearAccount.setOnClickListener {
             findNavController().navigate(R.id.action_nav_setting_to_accountFragment)
+        }
+        binding.ivBackArrow.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
