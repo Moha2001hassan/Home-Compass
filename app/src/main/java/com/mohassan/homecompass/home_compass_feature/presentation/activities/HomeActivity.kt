@@ -1,14 +1,7 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.activities
 
-import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
-import android.view.Window
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -17,10 +10,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.GravityCompat
 import androidx.navigation.ui.onNavDestinationSelected
 import com.mohassan.homecompass.R
+import com.mohassan.homecompass.core.utils.GlobalUsedFunctions.showCustomDialog
 import com.mohassan.homecompass.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -42,15 +35,12 @@ class HomeActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
                 R.id.nav_chatBot,
                 R.id.nav_searchMissing,
-                R.id.nav_setting,
-                R.id.nav_logout
+                R.id.nav_setting
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -64,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_logout -> {
                     drawerLayout.closeDrawer(GravityCompat.START)
                     menuItem.onNavDestinationSelected(navController)
-                    showCustomDialog()
+                    showCustomDialog(R.drawable.ic_logout_24,this)
                     true
                 }
 
@@ -85,28 +75,5 @@ class HomeActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-
-    private fun showCustomDialog() {
-        val dialog = Dialog(this)
-
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.custom_dialog)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        val btnYes = dialog.findViewById<Button>(R.id.btn_yes_dialog)
-        val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel_dialog)
-        val imgDialog = dialog.findViewById<ImageView>(R.id.img_dialog)
-
-        imgDialog.setImageResource(R.drawable.ic_logout_24)
-
-        btnYes.setOnClickListener {
-            // delete account and go to login
-        }
-        btnCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.show()
     }
 }

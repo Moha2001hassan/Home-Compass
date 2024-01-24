@@ -1,18 +1,14 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.fragments
 
-import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
+import com.mohassan.homecompass.core.utils.GlobalUsedFunctions.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.login_register_feature.presentation.viewmodels.SearchMissingViewModel
 
@@ -54,27 +50,11 @@ class SettingFragment : Fragment() {
         }
 
         binding.linearDeleteAccount.setOnClickListener {
-            showCustomDialog()
+            showCustomDialog(R.drawable.ic_delete_account, requireContext())
         }
-    }
-
-    private fun showCustomDialog() {
-        val dialog = Dialog(requireContext())
-
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.custom_dialog)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        val btnYes = dialog.findViewById<Button>(R.id.btn_yes_dialog)
-        val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel_dialog)
-
-        btnYes.setOnClickListener {
-            // delete account and go to login
+        binding.linearLogOut.setOnClickListener {
+            showCustomDialog(R.drawable.ic_logout_24, requireContext())
         }
-        btnCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.show()
     }
 
     override fun onDestroyView() {
