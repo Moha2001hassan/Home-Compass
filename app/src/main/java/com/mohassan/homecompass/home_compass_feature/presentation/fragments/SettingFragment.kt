@@ -1,9 +1,14 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.fragments
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -39,12 +44,37 @@ class SettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.linearAccount.setOnClickListener {
             findNavController().navigate(R.id.action_nav_setting_to_accountFragment)
         }
+
         binding.ivBackArrow.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        binding.linearDeleteAccount.setOnClickListener {
+            showCustomDialog()
+        }
+    }
+
+    private fun showCustomDialog() {
+        val dialog = Dialog(requireContext())
+
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.custom_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnYes = dialog.findViewById<Button>(R.id.btn_yes_dialog)
+        val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel_dialog)
+
+        btnYes.setOnClickListener {
+            // delete account and go to login
+        }
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 
     override fun onDestroyView() {
