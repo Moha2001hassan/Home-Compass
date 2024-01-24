@@ -44,6 +44,9 @@ class SettingFragment : Fragment() {
         binding.linearAccount.setOnClickListener {
             findNavController().navigate(R.id.action_nav_setting_to_accountFragment)
         }
+        binding.linearReport.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_setting_to_reportFragment)
+        }
 
         binding.ivBackArrow.setOnClickListener {
             findNavController().navigateUp()
