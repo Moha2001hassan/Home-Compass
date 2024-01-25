@@ -27,15 +27,30 @@
         android:id="@+id/nav_setting"
         android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.SettingFragment"
         android:label=""
-        tools:layout="@layout/fragment_setting" >
+        tools:layout="@layout/fragment_setting">
         <action
             android:id="@+id/action_nav_setting_to_accountFragment"
             app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_nav_setting_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <action
+            android:id="@+id/action_nav_setting_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.AccountFragment"
         android:label=""
-        tools:layout="@layout/fragment_account"
-        />
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.ReportFragment"
+        android:label=""
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.NotificationsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

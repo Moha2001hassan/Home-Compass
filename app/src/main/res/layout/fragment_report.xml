@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/g_green"
+        android:text="@string/report"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWhatsGoing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/what_s_going_on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvReport" />
+
+    <TextView
+        android:id="@+id/tvNudity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/nudity"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWhatsGoing" />
+
+    <View
+        android:id="@+id/lineNudity"
+        android:layout_width="345dp"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/g_gray_light"
+        app:layout_constraintBottom_toTopOf="@id/tvViolence"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNudity" />
+
+    <TextView
+        android:paddingBottom="10dp"
+        android:id="@+id/tvViolence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/violence"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineNudity" />
+
+    <View
+        android:id="@+id/lineViolence"
+        android:layout_width="345dp"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/g_gray_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvViolence" />
+
+    <TextView
+        android:paddingBottom="10dp"
+        android:id="@+id/tvHarassment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/harassment"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineViolence" />
+    <View
+        android:id="@+id/lineHarassment"
+        android:layout_width="345dp"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/g_gray_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHarassment" />
+    <TextView
+        android:id="@+id/tvFalseInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="10dp"
+        android:text="@string/false_information"
+        android:textColor="@color/g_red"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineHarassment" />
+    <View
+        android:id="@+id/lineFalseInformation"
+        android:layout_width="345dp"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/g_gray_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFalseInformation" />
+    <TextView
+        android:id="@+id/tvSpam"
+        android:layout_width="wrap_content"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/spam"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineFalseInformation" />
+    <View
+        android:id="@+id/lineSpam"
+        android:layout_width="345dp"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/g_gray_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSpam" />
+    <TextView
+        android:id="@+id/tvHateSpeech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/hate_speech"
+        android:textSize="20sp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineSpam" />
+    <View
+        android:id="@+id/lineHateSpeech"
+        android:layout_width="345dp"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="@color/g_gray_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHateSpeech" />
+
+    <TextView
+        android:id="@+id/tvTerrorism"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/terrorism"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineHateSpeech" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
