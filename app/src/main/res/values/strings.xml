@@ -46,11 +46,23 @@
     <string name="address">Address: </string>
     <string name="_220_street">220 **** street</string>
     <string name="phoneNumber">Phone number: </string>
-    <string name="_777_888_999">777-888-999</string>
+    <string name="_777_888_999">777888999</string>
     <string name="profile_link">Profile link: </string>
     <string name="https_www_figma_com">https://www.figma.com</string>
     <string name="birthday">Birthday: </string>
     <string name="_19_9_2004">19/9/2004</string>
     <string name="gender">Gender: </string>
     <string name="male">Male</string>
+    <string name="terrorism">Terrorism</string>
+    <string name="hate_speech">Hate speech</string>
+    <string name="spam">Spam</string>
+    <string name="false_information">False Information</string>
+    <string name="harassment">Harassment</string>
+    <string name="violence">Violence</string>
+    <string name="nudity">Nudity</string>
+    <string name="what_s_going_on">what\'s going on?</string>
+    <string name="no_pop">No pop</string>
+    <string name="popup_notifications">Popup notifications</string>
+    <string name="notifications_tone">Notifications tone</string>
+    <string name="messages">Messages</string>
 </resources>
