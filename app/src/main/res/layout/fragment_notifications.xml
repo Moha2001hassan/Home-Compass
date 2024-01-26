@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvPopupNotifications" />
 
     <ImageView
-        android:layout_width="340dp"
+        android:layout_width="325dp"
         android:layout_height="100dp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginStart="30dp"
