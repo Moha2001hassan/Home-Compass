@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.HomeFragment"
+        android:name="com.mohassan.homecompass.ui.main.home.HomeFragment"
         android:label=""
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_chatBot"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.ChatBotFragment"
+        android:name="com.mohassan.homecompass.ui.main.chatbot.ChatBotFragment"
         android:label=""
         tools:layout="@layout/fragment_chatbot" />
 
     <fragment
         android:id="@+id/nav_searchMissing"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.SearchMissingFragment"
+        android:name="com.mohassan.homecompass.ui.main.searchMissing.SearchMissingFragment"
         android:label=""
         tools:layout="@layout/fragment_search_missing" />
 
     <fragment
         android:id="@+id/nav_setting"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.SettingFragment"
+        android:name="com.mohassan.homecompass.ui.main.settings.SettingFragment"
         android:label=""
         tools:layout="@layout/fragment_setting">
         <action
@@ -40,17 +40,17 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.AccountFragment"
+        android:name="com.mohassan.homecompass.ui.main.settings.fragments.AccountFragment"
         android:label=""
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/reportFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.ReportFragment"
+        android:name="com.mohassan.homecompass.ui.main.settings.fragments.ReportFragment"
         android:label=""
         tools:layout="@layout/fragment_report" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.NotificationsFragment"
+        android:name="com.mohassan.homecompass.ui.main.settings.fragments.NotificationsFragment"
         android:label=""
         tools:layout="@layout/fragment_notifications" />
 </navigation>
