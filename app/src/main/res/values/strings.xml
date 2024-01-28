@@ -65,4 +65,7 @@
     <string name="popup_notifications">Popup notifications</string>
     <string name="notifications_tone">Notifications tone</string>
     <string name="messages">Messages</string>
+    <string name="test_feed_text">I found a homeless boy who \nhad not eaten for two days at the following address ::Lorem ipsumI found a homeless boy who had not eaten for two days at the following address ::Lorem ipsum</string>
+    <string name="volunteer">Volunteer</string>
+    <string name="mark">Mark</string>
 </resources>
