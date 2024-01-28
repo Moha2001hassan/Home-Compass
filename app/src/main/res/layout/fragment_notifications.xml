@@ -80,16 +80,25 @@
         app:layout_constraintStart_toStartOf="@id/tvNotificationsTone"
         app:layout_constraintTop_toBottomOf="@id/tvPopupNotifications" />
 
-    <ImageView
-        android:layout_width="325dp"
-        android:layout_height="100dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/img"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/high_priority_notifications"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvNoPop"
+        app:layout_constraintTop_toBottomOf="@+id/tvNoPop" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNoPop"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
