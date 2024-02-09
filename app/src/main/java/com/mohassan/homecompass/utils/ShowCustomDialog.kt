@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import com.mohassan.homecompass.R
 
-object GlobalUsedFunctions {
+object ShowCustomDialog {
 
     fun showCustomDialog(imageId: Int, context: Context) {
         val dialog = Dialog(context)

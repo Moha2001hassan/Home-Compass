@@ -2,6 +2,7 @@ package com.mohassan.homecompass.ui.main
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.ui.onNavDestinationSelected
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.utils.GlobalUsedFunctions.showCustomDialog
+import com.mohassan.homecompass.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.ActivityHomeBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,10 +27,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.setNavigationIcon(R.drawable.ic_list)
         // Set custom icon for navigation drawer
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_list)
         setSupportActionBar(binding.toolbar)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
@@ -48,7 +47,6 @@ class MainActivity : AppCompatActivity() {
 
         // logout
         navView.setNavigationItemSelectedListener { menuItem ->
-
             when (menuItem.itemId) {
 
                 R.id.nav_logout -> {
@@ -59,6 +57,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> {
+                    // Clear the back stack inclusive and navigate to the selected destination
+                    navController.popBackStack(navController.graph.startDestinationId, false)
+                    navController.navigate(menuItem.itemId)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     menuItem.onNavDestinationSelected(navController)
                 }
@@ -68,8 +69,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.chatBot_menu -> {
+                val navController = findNavController(R.id.nav_host_fragment_content_main)
+                navController.navigate(R.id.nav_chatBot)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -8,8 +8,6 @@
     android:clipChildren="false"
     android:fitsSystemWindows="false">
 
-    <!--    tools:openDrawer="start"-->
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -19,7 +17,7 @@
             style="@style/CustomToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/main"
+            app:menu="@menu/main_menu"
             app:navigationIcon="@drawable/ic_list">
 
             <ImageView

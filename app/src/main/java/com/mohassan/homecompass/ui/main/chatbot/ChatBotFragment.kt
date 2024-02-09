@@ -1,38 +1,70 @@
 package com.mohassan.homecompass.ui.main.chatbot
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohassan.homecompass.databinding.FragmentChatbotBinding
 
 class ChatBotFragment : Fragment() {
 
     private var _binding: FragmentChatbotBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var adapter: ChatBotAdapter
+    private val viewModel: ChatBotViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val chatBotViewModel =
-            ViewModelProvider(this)[ChatBotViewModel::class.java]
-
         _binding = FragmentChatbotBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textHome
-        chatBotViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.clearMessages()
+        recyclerView()
+        clickEvents()
+
+        viewModel.messages.observe(viewLifecycleOwner) { messages ->
+            adapter.setMessages(messages)
+            binding.rvMessages.scrollToPosition(messages.size - 1)
         }
-        return root
+
+        // welcome message
+        val random = (0..4).random()
+        viewModel.sendCustomBotMessage("Hello! Today you're speaking with ${viewModel.botList[random]}, how may I help?")
+    }
+
+    private fun clickEvents() {
+        binding.btnSend.setOnClickListener {
+            val message = binding.etMessage.text.toString()
+            if (message.isNotEmpty()){
+                binding.animationView.visibility = View.GONE
+                viewModel.sendMessage(message)
+                binding.etMessage.setText("")
+            }
+
+
+        }
+
+        binding.etMessage.setOnClickListener {
+            binding.rvMessages.scrollToPosition(adapter.itemCount - 1)
+        }
+    }
+
+    private fun recyclerView() {
+        adapter = ChatBotAdapter()
+        binding.rvMessages.adapter = adapter
+        binding.rvMessages.layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun onDestroyView() {

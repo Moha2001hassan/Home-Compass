@@ -9,7 +9,6 @@
         <item name="toolbarStyle">@style/CustomToolbar</item>
     </style>
 
-
     <!-- Custom Button Style -->
     <style name="CustomButtonStyle" parent="Widget.Material3.Button">
         <item name="android:backgroundTint">@color/olive_teal</item>
@@ -23,7 +22,6 @@
         <item name="android:backgroundTint">@color/medium_orange</item>
     </style>
 
-
     <style name="Theme.HomeCompass" parent="Base.Theme.HomeCompass" />
 
     <style name="Theme.HomeCompass.NoActionBar">
@@ -31,12 +29,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-
     <!-- Custom Button Style -->
     <style name="CustomToolbar" parent="Widget.AppCompat.Toolbar">
         <item name="android:background">@color/white</item>
         <item name="android:elevation">30dp</item>
-        <item name="navigationIcon">@drawable/ic_list</item>
     </style>
-
 </resources>

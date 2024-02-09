@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.utils.GlobalUsedFunctions.showCustomDialog
+import com.mohassan.homecompass.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.ui.main.searchMissing.SearchMissingViewModel
 
