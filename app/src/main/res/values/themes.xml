@@ -9,6 +9,11 @@
         <item name="toolbarStyle">@style/CustomToolbar</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.FloatingActionButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Adjust the percentage to make it more or less circular -->
+    </style>
+
     <!-- Custom Button Style -->
     <style name="CustomButtonStyle" parent="Widget.Material3.Button">
         <item name="android:backgroundTint">@color/olive_teal</item>
