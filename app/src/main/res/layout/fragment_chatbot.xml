@@ -29,6 +29,7 @@
                 android:id="@+id/et_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
                 android:ellipsize="end"
                 android:hint="@string/talk_to_bot"
                 android:inputType="textShortMessage"
@@ -43,6 +44,8 @@
             android:layout_margin="10dp"
             android:backgroundTint="@color/olive_teal"
             android:contentDescription="@string/send"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.FloatingActionButton"
+
             android:src="@drawable/ic_send_24"
             app:tint="@color/white" />
     </LinearLayout>

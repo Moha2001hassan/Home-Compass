@@ -91,6 +91,14 @@ object BotResponse {
                     else -> "error"
                 }
             }
+            // Looking for a job or work
+            message.contains("job") || message.contains("work") -> {
+                "Sure, if you're looking for a job opportunity, please check the job section in our app and send us your CV and qualifications. We'll recommend you to relevant companies in your field!"
+            }
+            // Requesting money or providing a number for online transfer
+            (message.contains("money") )-> {
+                "If you need assistance with online money transfer, please be cautious with sharing your personal information. If you have a verified payment service account, you can use it securely. If you're in need of immediate assistance, I recommend reaching out to local shelters or organizations for support."
+            }
 
             //When the programme doesn't understand...
             else -> {
