@@ -1,6 +1,7 @@
 package com.mohassan.homecompass.ui.main.chatbot
 
-import android.opengl.Visibility
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,13 @@ class ChatBotFragment : Fragment() {
 
         // welcome message
         val random = (0..4).random()
-        viewModel.sendCustomBotMessage("Hello! Today you're speaking with ${viewModel.botList[random]}, how may I help?")
+        viewModel.sendCustomBotMessage("Hello! Today you're speaking with " +
+                "${viewModel.botList[random]}, how may I help?")
+
+        viewModel.openUrlEvent.observe(viewLifecycleOwner) { url ->
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
     }
 
     private fun clickEvents() {
@@ -52,8 +59,6 @@ class ChatBotFragment : Fragment() {
                 viewModel.sendMessage(message)
                 binding.etMessage.setText("")
             }
-
-
         }
 
         binding.etMessage.setOnClickListener {

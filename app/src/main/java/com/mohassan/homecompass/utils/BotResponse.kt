@@ -52,19 +52,24 @@ object BotResponse {
             message.contains("how are you") -> {
                 when (random) {
                     0 -> "I'm doing fine, thanks!"
-                    1 -> "I'm hungry...hahaha"
+                    1 -> "Fine thanks"
                     2 -> "Pretty good! How about you?"
                     else -> "error"
                 }
             }
 
             //What time is it?
-            message.contains("time") && message.contains("?") -> {
+            message.contains("what") && message.contains("time") -> {
                 val timeStamp = Timestamp(System.currentTimeMillis())
                 val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm")
                 val date = sdf.format(Date(timeStamp.time))
 
                 date.toString()
+            }
+
+            // speak arabic?
+            message.contains("speak") && message.contains("arabic") -> {
+                "للاسف لا استطيع التحدث بالعربيه الان، لكني تحت التطوير وقد ادعم اللغه العربيه قريبا"
             }
 
             //Open Google
@@ -73,7 +78,7 @@ object BotResponse {
             }
 
             //Search on the internet
-            message.contains("search") -> {
+            message.contains("search for") || message.contains("search about") -> {
                 OPEN_SEARCH
             }
 
@@ -92,7 +97,7 @@ object BotResponse {
                 when (random) {
                     0 -> "I don't understand..."
                     1 -> "Try asking me something different"
-                    2 -> "Idk"
+                    2 -> "What you mean?"
                     else -> "error"
                 }
             }
