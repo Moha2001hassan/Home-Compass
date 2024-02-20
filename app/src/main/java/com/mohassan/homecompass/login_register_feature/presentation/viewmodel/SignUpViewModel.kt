@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.login_register_feature.presentation.fragments
+package com.mohassan.homecompass.login_register_feature.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 

@@ -3,6 +3,8 @@ package com.mohassan.homecompass.home_compass_feature.presentation
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
+import androidx.activity.viewModels
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -21,14 +23,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
+    private val viewModel: MainActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set custom icon for navigation drawer
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setSupportActionBar(binding.toolbar)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> {
                     drawerLayout.closeDrawer(GravityCompat.START)
                     menuItem.onNavDestinationSelected(navController)
-                    showCustomDialog(R.drawable.ic_logout_24,this)
+                    showCustomDialog(R.drawable.ic_logout_24, this)
                     true
                 }
 
@@ -65,13 +66,23 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        viewModel.userName.observe(this) { userName ->
+            binding.navView.getHeaderView(0)
+                .findViewById<TextView>(R.id.txt_header_username).text = userName
+        }
+
+        viewModel.email.observe(this) { email ->
+            binding.navView.getHeaderView(0)
+                .findViewById<TextView>(R.id.txt_header_email).text = email
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.chatBot_menu -> {
