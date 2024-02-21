@@ -1,5 +1,6 @@
 package com.mohassan.homecompass.home_compass_feature.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,13 +14,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.navigation.ui.onNavDestinationSelected
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.ActivityHomeBinding
+import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
+import com.mohassan.homecompass.login_register_feature.presentation.activity.IntroActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CustomDialogListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
@@ -46,25 +47,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        // logout
-        navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-
-                R.id.nav_logout -> {
-                    drawerLayout.closeDrawer(GravityCompat.START)
-                    menuItem.onNavDestinationSelected(navController)
-                    showCustomDialog(R.drawable.ic_logout_24, this)
-                    true
-                }
-
-                else -> {
-                    // Clear the back stack inclusive and navigate to the selected destination
-                    navController.popBackStack(navController.graph.startDestinationId, false)
-                    navController.navigate(menuItem.itemId)
-                    drawerLayout.closeDrawer(GravityCompat.START)
-                    menuItem.onNavDestinationSelected(navController)
-                }
-            }
+        binding.logoutBtn.setOnClickListener {
+            showCustomDialog(R.drawable.ic_logout_24, this, this)
         }
 
         viewModel.userName.observe(this) { userName ->
@@ -97,5 +81,15 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onLogoutClicked() {
+        val intent = Intent(this, IntroActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    override fun onDeleteAccount() {
+        //TODO("Not yet implemented")
     }
 }
