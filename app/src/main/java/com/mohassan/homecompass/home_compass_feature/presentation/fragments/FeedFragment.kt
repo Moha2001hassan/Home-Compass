@@ -1,8 +1,7 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.fragments
 
-import android.content.ContentValues
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,13 +31,13 @@ class FeedFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this)[FeedViewModel::class.java]
 
         viewModel.posts.observe(requireActivity(), Observer { posts ->
-            Log.i(ContentValues.TAG, "Number of Posts are : ${posts.size}")
             postsList.addAll(posts)
             feedAdapter.notifyDataSetChanged()
         })

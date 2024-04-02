@@ -30,6 +30,8 @@ class SplashFragment : Fragment() {
         val isLogin = sharedPreferences.getString(PREF_IS_LOGIN, "")
 
         Handler().postDelayed({
+            findNavController().navigate(R.id.action_splashFragment_to_onboarding1Fragment)
+            /*
             if (isLogin == LOGIN_VALUE) {
                 val intent = Intent(requireActivity(), MainActivity::class.java)
                 startActivity(intent)
@@ -37,6 +39,7 @@ class SplashFragment : Fragment() {
             } else {
                 findNavController().navigate(R.id.action_splashFragment_to_onboarding1Fragment)
             }
+            */
         }, SPLASH_SCREEN_DELAY)
         return view
     }
