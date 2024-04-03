@@ -1,8 +1,10 @@
 package com.mohassan.homecompass.core.utils
 
 object Constants {
-    const val SPLASH_SCREEN_DELAY = 4000L
-    const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    const val SPLASH_SCREEN_DELAY = 2000L
+    const val BASE_URL2 = "https://jsonplaceholder.typicode.com/"
+    const val BASE_URL = "https://homecompassapi.azurewebsites.net/"
+
 
     const val SEND_ID = "SEND_ID"
     const val RECEIVE_ID = "RECEIVE_ID"

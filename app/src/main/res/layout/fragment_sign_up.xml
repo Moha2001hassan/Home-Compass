@@ -53,10 +53,10 @@
         app:startIconTint="@color/olive_teal">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_name"
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name"
+            android:hint="username"
             android:inputType="text"
             android:textColorHint="@color/olive_teal" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,15 +69,36 @@
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout1"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout1"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout1"
-        app:startIconDrawable="@drawable/ic_phone_24"
+        app:startIconDrawable="@drawable/ic_person_outline"
+
         app:startIconTint="@color/olive_teal">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/phone_number"
-            android:inputType="phone"
+            android:hint="firstname"
+            android:inputType="text"
+            android:textColorHint="@color/olive_teal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout22"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:startIconDrawable="@drawable/ic_person_outline"
+
+        app:startIconTint="@color/olive_teal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="lastname"
+            android:inputType="text"
             android:textColorHint="@color/olive_teal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,9 +107,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout1"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout1"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout22"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout22"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout22"
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/ic_lock_24"
         app:startIconTint="@color/olive_teal">

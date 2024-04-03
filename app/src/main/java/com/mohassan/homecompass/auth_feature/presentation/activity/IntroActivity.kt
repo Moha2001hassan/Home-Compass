@@ -1,9 +1,11 @@
-package com.mohassan.homecompass.login_register_feature.presentation.activity
+package com.mohassan.homecompass.auth_feature.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mohassan.homecompass.databinding.ActivityIntroBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IntroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
 
