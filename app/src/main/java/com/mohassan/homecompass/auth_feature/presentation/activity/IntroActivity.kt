@@ -17,6 +17,5 @@ class IntroActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-
     }
 }

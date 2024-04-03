@@ -1,5 +1,6 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,11 @@ import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
+import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.SearchMissingViewModel
+import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 
-class SettingFragment : Fragment() {
+class SettingFragment : Fragment(), CustomDialogListener {
 
     private var _binding: FragmentSettingBinding? = null
     private val binding get() = _binding!!
@@ -22,8 +25,7 @@ class SettingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val settingViewModel =
-            ViewModelProvider(this)[SearchMissingViewModel::class.java]
+        ViewModelProvider(this)[SearchMissingViewModel::class.java]
 
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         return binding.root
@@ -47,15 +49,25 @@ class SettingFragment : Fragment() {
         }
 
         binding.linearDeleteAccount.setOnClickListener {
-            showCustomDialog(R.drawable.ic_delete_account, requireContext())
+            showCustomDialog(R.drawable.ic_delete_account, requireContext(),this)
         }
         binding.linearLogOut.setOnClickListener {
-            showCustomDialog(R.drawable.ic_logout_24, requireContext())
+            showCustomDialog(R.drawable.ic_logout_24, requireContext(),this)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onLogoutClicked() {
+        val intent = Intent(requireActivity(), IntroActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
+    override fun onDeleteAccount() {
+        TODO("Not yet implemented")
     }
 }

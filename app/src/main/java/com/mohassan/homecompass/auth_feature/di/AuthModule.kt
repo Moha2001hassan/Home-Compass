@@ -1,9 +1,9 @@
 package com.mohassan.homecompass.auth_feature.di
 
-import com.mohassan.homecompass.core.utils.Constants.BASE_URL
 import com.mohassan.homecompass.auth_feature.data.remote.ApiService
 import com.mohassan.homecompass.auth_feature.data.repository.UserRepositoryImpl
 import com.mohassan.homecompass.auth_feature.domain.repository.UserRepository
+import com.mohassan.homecompass.core.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -11,10 +11,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.core.utils.Resource
-import com.mohassan.homecompass.databinding.FragmentSignInBinding
 import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import com.mohassan.homecompass.core.utils.ProgressDialog
+import com.mohassan.homecompass.core.utils.Resource
+import com.mohassan.homecompass.databinding.FragmentSignInBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -62,7 +62,7 @@ class SignInFragment : Fragment() {
 
                     is Resource.Success -> {
                         progressDialog.dismiss()
-                        startActivity(Intent(requireContext(),MainActivity::class.java))
+                        startActivity(Intent(requireContext(), MainActivity::class.java))
                     }
 
                     is Resource.Error -> {
@@ -72,11 +72,9 @@ class SignInFragment : Fragment() {
                             resource.message ?: "Login failed",
                             Toast.LENGTH_SHORT
                         ).show()
-
                     }
                 }
             }
         }
     }
-
 }

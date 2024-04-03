@@ -1,14 +1,14 @@
 package com.mohassan.homecompass.auth_feature.data.repository
 
-import com.mohassan.homecompass.core.utils.Resource
 import com.mohassan.homecompass.auth_feature.data.remote.ApiService
 import com.mohassan.homecompass.auth_feature.data.remote.dto.LoginRequestBody
 import com.mohassan.homecompass.auth_feature.data.remote.dto.RegisterRequestBody
 import com.mohassan.homecompass.auth_feature.domain.repository.UserRepository
+import com.mohassan.homecompass.core.utils.Resource
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(private val apiService: ApiService) : UserRepository {
-   override suspend fun registerUser(
+    override suspend fun registerUser(
         firstName: String,
         lastName: String,
         username: String,

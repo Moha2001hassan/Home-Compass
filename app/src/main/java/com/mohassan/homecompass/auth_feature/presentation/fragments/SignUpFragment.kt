@@ -11,10 +11,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
-import com.mohassan.homecompass.core.utils.Resource
-import com.mohassan.homecompass.databinding.FragmentSignUpBinding
 import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import com.mohassan.homecompass.core.utils.ProgressDialog
+import com.mohassan.homecompass.core.utils.Resource
+import com.mohassan.homecompass.databinding.FragmentSignUpBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,7 +23,6 @@ import kotlinx.coroutines.launch
 class SignUpFragment : Fragment() {
     private val viewModel: UserViewModel by viewModels()
     private val progressDialog by lazy { ProgressDialog.createProgressDialog(requireActivity()) }
-
 
     private lateinit var binding: FragmentSignUpBinding
     override fun onCreateView(
@@ -62,11 +61,9 @@ class SignUpFragment : Fragment() {
                             resource.message.toString(),
                             Toast.LENGTH_LONG
                         ).show()
-
                     }
                 }
             }
-
         }
         binding.btnSignUp.setOnClickListener {
             val firstName = binding.etFirstName.text.toString()
@@ -77,7 +74,5 @@ class SignUpFragment : Fragment() {
 
             viewModel.registerUser(firstName, lastName, username, email, password)
         }
-
-
     }
 }

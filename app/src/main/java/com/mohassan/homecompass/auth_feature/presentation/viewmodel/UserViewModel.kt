@@ -2,9 +2,9 @@ package com.mohassan.homecompass.auth_feature.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mohassan.homecompass.core.utils.Resource
 import com.mohassan.homecompass.auth_feature.domain.use_case.LoginUseCase
 import com.mohassan.homecompass.auth_feature.domain.use_case.RegisterUseCase
+import com.mohassan.homecompass.core.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow

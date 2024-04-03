@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
-
 }
 
 android {
@@ -70,6 +69,10 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     //Dagger hilt
     implementation "com.google.dagger:hilt-android:2.48"

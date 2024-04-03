@@ -8,10 +8,11 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.mohassan.homecompass.R
+import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 
 object ShowCustomDialog {
 
-    fun showCustomDialog(imageId: Int, context: Context) {
+    fun showCustomDialog(imageId: Int, context: Context,listener: CustomDialogListener) {
         val dialog = Dialog(context)
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -28,11 +29,12 @@ object ShowCustomDialog {
             when (imageId) {
                 R.drawable.ic_delete_account -> {
                     // delete account and go to login
+                    listener.onDeleteAccount()
                 }
 
                 R.drawable.ic_logout_24 -> {
                     // logout
-
+                    listener.onLogoutClicked()
                 }
 
                 else -> dialog.dismiss()
