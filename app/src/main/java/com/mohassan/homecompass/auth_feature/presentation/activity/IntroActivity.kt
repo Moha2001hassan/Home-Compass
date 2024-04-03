@@ -1,11 +1,11 @@
-package com.mohassan.homecompass.login_register_feature.presentation.activity
+package com.mohassan.homecompass.auth_feature.presentation.activity
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mohassan.homecompass.core.utils.Constants.SHARED_PREF
 import com.mohassan.homecompass.databinding.ActivityIntroBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IntroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
 
@@ -15,9 +15,6 @@ class IntroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
-
-        val sharedPreferences = getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE)
-
 
 
     }

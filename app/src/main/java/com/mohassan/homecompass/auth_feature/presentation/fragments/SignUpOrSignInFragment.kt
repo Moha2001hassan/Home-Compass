@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.login_register_feature.presentation.fragments
+package com.mohassan.homecompass.auth_feature.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

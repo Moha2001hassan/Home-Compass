@@ -13,7 +13,7 @@ import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.SearchMissingViewModel
-import com.mohassan.homecompass.login_register_feature.presentation.activity.IntroActivity
+import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 
 class SettingFragment : Fragment(), CustomDialogListener {
 

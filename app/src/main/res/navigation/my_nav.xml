@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.SplashFragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboarding1Fragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.Onboarding1Fragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.Onboarding1Fragment"
         android:label="Onboarding1Fragment"
         tools:layout="@layout/fragment_onboarding1">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboarding2Fragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.Onboarding2Fragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.Onboarding2Fragment"
         android:label="Onboarding2Fragment"
         tools:layout="@layout/fragment_onboarding2">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpOrSignInFragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.SignUpOrSignInFragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.SignUpOrSignInFragment"
         android:label="SignUpOrSignInFragment"
         tools:layout="@layout/fragment_signup_or_signin" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.SignUpFragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.SignInFragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.SignInFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -73,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgetPasswordFragment"
-        android:name="com.mohassan.homecompass.login_register_feature.presentation.fragments.ForgetPasswordFragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.ForgetPasswordFragment"
         android:label="ForgetPasswordFragment"
         tools:layout="@layout/fragment_forget_pass" >
         <action

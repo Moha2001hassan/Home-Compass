@@ -7,14 +7,11 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface PostApi {
+interface ApiService {
 
     @GET("Post")
     suspend fun getPosts(): List<Post>
 
     @POST("Post")
     suspend fun publishPost(@Body postRequest: PostRequest): Response<Void>
-
-//    @GET("posts/{id}")
-//    suspend fun getPost(@Path("id") postId: Int): Post
 }

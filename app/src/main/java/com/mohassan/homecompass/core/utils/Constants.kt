@@ -1,7 +1,7 @@
 package com.mohassan.homecompass.core.utils
 
 object Constants {
-    const val SPLASH_SCREEN_DELAY = 1000L
+    const val SPLASH_SCREEN_DELAY = 2000L
     const val BASE_URL = "https://homecompassapi.azurewebsites.net/"
 
     const val SEND_ID = "SEND_ID"

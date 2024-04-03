@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -9,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.mohassan.homecompass"
-        minSdk 24
+        minSdk 26
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -66,9 +68,14 @@ dependencies {
     implementation ("com.airbnb.android:lottie:4.0.0")
 
     implementation 'com.google.code.gson:gson:2.8.7'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
+    //Dagger hilt
+    implementation "com.google.dagger:hilt-android:2.48"
+    kapt "com.google.dagger:hilt-compiler:2.48"
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 }
