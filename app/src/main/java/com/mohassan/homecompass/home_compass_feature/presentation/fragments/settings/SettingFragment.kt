@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
-import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.SearchMissingViewModel
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 
 class SettingFragment : Fragment(), CustomDialogListener {
@@ -25,7 +23,6 @@ class SettingFragment : Fragment(), CustomDialogListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        ViewModelProvider(this)[SearchMissingViewModel::class.java]
 
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         return binding.root

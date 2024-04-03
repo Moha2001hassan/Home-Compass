@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mohassan.homecompass.databinding.FragmentHomeBinding
-import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.HomeViewModel
 import com.mohassan.homecompass.home_compass_feature.presentation.adapters.ViewPagerAdapter
 
 class HomeFragment : Fragment() {
@@ -21,9 +19,6 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this)[HomeViewModel::class.java]
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -36,7 +31,6 @@ class HomeFragment : Fragment() {
                 else -> tab.text = "Food"
             }
         }.attach()
-
         return root
     }
 

@@ -71,4 +71,5 @@
     <string name="add_photo">Add photo</string>
     <string name="talk_to_bot">Talk to Bot</string>
     <string name="logout">Logout</string>
+    <string name="lorem_ipsum_dolor_sit_amet_is_a_latin_phrase_that_translates_to_pain_is_an_illusion">Lorem ipsum dolor sit amet is a Latin phrase that translates to “ pain is an illusion.”</string>
 </resources>

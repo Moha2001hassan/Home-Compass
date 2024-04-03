@@ -63,10 +63,9 @@ class ChatBotViewModel : ViewModel() {
                 _openUrlEvent.value = "https://www.google.com/"
             }
             OPEN_SEARCH -> {
-                val searchTerm: String? = message.substringAfterLast("search")
+                val searchTerm: String = message.substringAfterLast("search")
                 _openUrlEvent.value = "https://www.google.com/search?&q=$searchTerm"
             }
-            // Handle other cases if necessary
         }
     }
 
