@@ -1,14 +1,15 @@
 package com.mohassan.homecompass.home_compass_feature.data.remote.dto
 
+
 import com.google.gson.annotations.SerializedName
 
-data class ShelterBody(
+data class FacilitiesBody(
     @SerializedName("categoryId")
     val categoryId: Int,
     @SerializedName("contributorId")
     val useId: String,
     @SerializedName("name")
-    val shelterName: String,
+    val name: String,
     @SerializedName("contactInformaton")
     val phone: String,
     @SerializedName("description")

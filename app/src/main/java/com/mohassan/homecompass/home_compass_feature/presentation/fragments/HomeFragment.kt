@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when(position){
                 0 -> tab.text = "Feed"
-                1 -> tab.text = "Works"
+                1 -> tab.text = "Jobs"
                 2 -> tab.text = "Shelters"
                 else -> tab.text = "Food"
             }

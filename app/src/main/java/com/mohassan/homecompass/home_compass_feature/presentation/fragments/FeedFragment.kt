@@ -46,7 +46,8 @@ class FeedFragment : Fragment() {
     private fun setupViewModel() {
         viewModel = ViewModelProvider(this)[FeedViewModel::class.java]
         viewModel.posts.observe(viewLifecycleOwner) { posts ->
-            postsList.addAll(posts)
+            postsList.clear() // Clear the list before adding new posts
+            postsList.addAll(posts.distinctBy { it.id }) // Remove duplicates based on 'id'
             feedAdapter.notifyDataSetChanged()
         }
         viewModel.getPosts()
@@ -64,6 +65,7 @@ class FeedFragment : Fragment() {
         }
     }
 
+    @SuppressLint("InflateParams")
     private fun showBottomSheetDialog() {
         val dialog = BottomSheetDialog(requireContext())
         val view = layoutInflater.inflate(R.layout.post_bottom_sheet_layout, null)

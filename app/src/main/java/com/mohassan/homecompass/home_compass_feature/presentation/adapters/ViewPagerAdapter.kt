@@ -15,9 +15,9 @@ class ViewPagerAdapter (fragment: HomeFragment) : FragmentStateAdapter(fragment)
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> FeedFragment()
-            1 -> RestaurantFragment()
+            1 -> WorkFragment()
             2 -> ShelterFragment()
-            else -> WorkFragment()
+            else -> RestaurantFragment()
         }
 
     }

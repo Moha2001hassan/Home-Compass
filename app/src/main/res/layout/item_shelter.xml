@@ -15,15 +15,24 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
-        <ImageView
-            android:id="@+id/img_shelter"
-            android:layout_width="180dp"
-            android:layout_height="120dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:elevation="10dp"
-            android:scaleType="centerCrop"
+            app:cardCornerRadius="6dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/forget_pass" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_shelter"
+                android:layout_width="180dp"
+                android:layout_height="120dp"
+                android:elevation="10dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/forget_pass" />
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/txt_shelter_name"
@@ -31,12 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:maxLength="17"
-            android:text="St Basils Housing"
+            android:text="@string/st_basils_housing"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/img_shelter"
-            app:layout_constraintStart_toStartOf="@+id/img_shelter"
-            app:layout_constraintTop_toBottomOf="@+id/img_shelter" />
+            app:layout_constraintEnd_toEndOf="@+id/cardImage"
+            app:layout_constraintStart_toStartOf="@+id/cardImage"
+            app:layout_constraintTop_toBottomOf="@+id/cardImage" />
 
         <TextView
             android:id="@+id/textView7"
@@ -87,17 +96,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="10dp"
-            android:layout_margin="2dp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_shelter"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/img_shelter">
+            app:layout_constraintTop_toTopOf="@+id/cardImage">
 
             <ImageView
                 android:id="@+id/img_location"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:elevation="10dp"
-                android:layout_margin="2dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/map" />
         </androidx.cardview.widget.CardView>
@@ -106,16 +114,14 @@
         <Button
             android:id="@+id/btn_contact"
             style="@style/CustomButtonStyle"
-            android:layout_width="129dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:layout_marginEnd="3dp"
             android:drawableLeft="@drawable/ic_whatsapp"
             android:text="Contact"
             app:cornerRadius="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_shelter_address" />
+            app:layout_constraintBottom_toBottomOf="@+id/txt_shelter_phone"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
