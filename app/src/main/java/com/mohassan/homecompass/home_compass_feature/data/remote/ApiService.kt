@@ -15,10 +15,12 @@ interface ApiService {
     @POST("Post")
     suspend fun publishPost(@Body postRequest: PostRequest): Response<Void>
 
-    @GET("Facility/bycategory/7")  // https://homecompassapi.azurewebsites.net/Facility/bycategory/7
-    suspend fun getShelter(): List<FacilitiesBody>
-
     @GET("Job")
     suspend fun getJobs(): List<JobBody>
 
+    @GET("Facility/bycategory/7")  // https://homecompassapi.azurewebsites.net/Facility/bycategory/7
+    suspend fun getShelter(): List<FacilitiesBody>
+
+    @GET("Facility/bycategory/2")
+    suspend fun getRestaurants(): List<FacilitiesBody>
 }

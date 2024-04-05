@@ -47,7 +47,7 @@ class FeedFragment : Fragment() {
         viewModel = ViewModelProvider(this)[FeedViewModel::class.java]
         viewModel.posts.observe(viewLifecycleOwner) { posts ->
             postsList.clear() // Clear the list before adding new posts
-            postsList.addAll(posts.distinctBy { it.id }) // Remove duplicates based on 'id'
+            postsList.addAll(posts)
             feedAdapter.notifyDataSetChanged()
         }
         viewModel.getPosts()

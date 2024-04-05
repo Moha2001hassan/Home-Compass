@@ -39,6 +39,7 @@ class WorkFragment:Fragment() {
     private fun setupViewModel() {
         viewModel = ViewModelProvider(this)[JobViewModel::class.java]
         viewModel.jobs.observe(viewLifecycleOwner) { jobs ->
+            jobsList.clear() // Clear the list before adding new posts
             jobsList.addAll(jobs)
             jobAdapter.notifyDataSetChanged()
         }

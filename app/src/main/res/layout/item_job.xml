@@ -20,7 +20,7 @@
             android:id="@+id/txtJobTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Factory worker"
             android:textColor="@color/olive_teal"
@@ -33,8 +33,9 @@
             android:id="@+id/txtJobDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
             android:maxLines="3"
             android:text="@string/lorem_ipsum_dolor_sit_amet_is_a_latin_phrase_that_translates_to_pain_is_an_illusion"
             android:textColor="#A5A5A5"
@@ -47,7 +48,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:text="Address:"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -69,7 +70,7 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="Phone Number:"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -91,7 +92,7 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="Salary:"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -104,10 +105,34 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="200$"
+            android:textStyle="bold"
             android:textColor="@color/medium_orange"
             app:layout_constraintBottom_toBottomOf="@+id/textView15"
             app:layout_constraintStart_toEndOf="@+id/textView15"
             app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/txtHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="9"
+            android:textColor="@color/medium_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/txtJobPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtJobPrice" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Hours per day:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtHours"
+            app:layout_constraintTop_toTopOf="@+id/txtHours" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

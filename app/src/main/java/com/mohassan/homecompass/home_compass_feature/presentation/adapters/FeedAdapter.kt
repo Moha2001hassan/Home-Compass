@@ -2,8 +2,10 @@ package com.mohassan.homecompass.home_compass_feature.presentation.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.edit
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mohassan.homecompass.R
@@ -14,6 +16,9 @@ class FeedAdapter(
     private val context: Context,
     private val posts: List<Post>
 ) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
+
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemPostBinding
@@ -30,15 +35,19 @@ class FeedAdapter(
     inner class ViewHolder(private val binding: ItemPostBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        private lateinit var postKey: String
         private var isLiked = false
 
         @SuppressLint("SetTextI18n")
         fun bind(post: Post) {
+            postKey = "isLiked_${post.id}"
+            isLiked = sharedPreferences.getBoolean(postKey, false)
+
             binding.tvName.text = post.authorName
             binding.tvTitle.text = post.title
             binding.tvBody.text = post.content
-            binding.tvLikesCount.text = post.likesCount.toString()
             binding.tvCommentsCount.text = post.commentsCount.toString()
+            updateLike(post)
 
             Glide.with(binding.root.context)
                 .load(post.authorPhotoUrl)
@@ -48,21 +57,23 @@ class FeedAdapter(
 
             binding.imgLike.setOnClickListener {
                 isLiked = !isLiked
-                updateLikeImage()
+                updateLike(post)
 
-                if (isLiked) {
-                    binding.tvLikesCount.text = (post.likesCount + 1).toString()
-                } else {
-                    binding.tvLikesCount.text = post.likesCount.toString()
+                sharedPreferences.edit {
+                    putBoolean(postKey, isLiked)
+                    apply()
                 }
             }
         }
 
-        private fun updateLikeImage() {
+        @SuppressLint("SetTextI18n")
+        private fun updateLike(post: Post) {
             if (isLiked) {
                 binding.imgLike.setImageResource(R.drawable.ic_filled_like)
+                binding.tvLikesCount.text = (post.likesCount + 1).toString()
             } else {
                 binding.imgLike.setImageResource(R.drawable.ic_like)
+                binding.tvLikesCount.text = post.likesCount.toString()
             }
         }
     }
