@@ -1,5 +1,8 @@
 package com.mohassan.homecompass.auth_feature.di
 
+import android.app.Application
+import android.content.Context
+import com.mohassan.homecompass.auth_feature.data.datastore.UserPreferences
 import com.mohassan.homecompass.auth_feature.data.remote.ApiService
 import com.mohassan.homecompass.auth_feature.data.repository.UserRepositoryImpl
 import com.mohassan.homecompass.auth_feature.domain.repository.UserRepository
@@ -7,6 +10,7 @@ import com.mohassan.homecompass.core.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -48,5 +52,17 @@ object AuthModule {
     @Singleton
     fun provideUserRepository(api: ApiService): UserRepository {
         return UserRepositoryImpl(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideApplicationContext(application: Application): Context {
+        return application.applicationContext
+    }
+
+    @Singleton
+    @Provides
+    fun provideUserPreferences(@ApplicationContext context: Context): UserPreferences {
+        return UserPreferences(context)
     }
 }

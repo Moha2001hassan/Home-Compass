@@ -1,7 +1,10 @@
 package com.mohassan.homecompass.auth_feature.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.mohassan.homecompass.auth_feature.data.datastore.UserPreferences
 import com.mohassan.homecompass.auth_feature.domain.use_case.LoginUseCase
 import com.mohassan.homecompass.auth_feature.domain.use_case.RegisterUseCase
 import com.mohassan.homecompass.core.utils.Resource
@@ -14,7 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class UserViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase,
-    private val registerUseCase: RegisterUseCase
+    private val registerUseCase: RegisterUseCase,
+   private val userPreferences: UserPreferences
 ) : ViewModel() {
 
     private val _registrationState = MutableSharedFlow<Resource<Unit>>()
@@ -22,6 +26,8 @@ class UserViewModel @Inject constructor(
 
     private val _loginState = MutableSharedFlow<Resource<Unit>>()
     val loginState: SharedFlow<Resource<Unit>> = _loginState
+
+    val isLoggedIn: LiveData<Boolean> = userPreferences.isLoggedIn.asLiveData()
 
     fun registerUser(
         firstName: String,
@@ -41,6 +47,9 @@ class UserViewModel @Inject constructor(
         viewModelScope.launch {
             _loginState.emit(Resource.Loading())
             val result = loginUseCase(email, password)
+            if (result is Resource.Success) {
+                userPreferences.setLoggedIn(true)
+            }
             _loginState.emit(result)
         }
     }
