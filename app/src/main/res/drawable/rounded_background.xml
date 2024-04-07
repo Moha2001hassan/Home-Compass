@@ -6,5 +6,5 @@
         android:width="1dp"
         android:color="@color/olive_teal"/> <!-- Set border width as desired -->
      <!-- Set border color -->
-    <corners android:radius="20dp" />
+    <corners android:radius="10dp" />
 </shape>

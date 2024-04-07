@@ -41,18 +41,18 @@
         app:layout_constraintTop_toBottomOf="@id/iv_account" />
 
     <TextView
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum_dolor_sit_amet"
-        android:textSize="15sp"
+        android:text="user name"
         android:textColor="@color/g_blue_gray200"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAccountName" />
 
     <TextView
-        android:id="@+id/tvEmail"
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -60,21 +60,22 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
     <TextView
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/gojn_gmail_com"
         android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/tvEmail"
-        app:layout_constraintStart_toEndOf="@id/tvEmail"
-        app:layout_constraintTop_toTopOf="@id/tvEmail" />
+        app:layout_constraintBottom_toBottomOf="@id/txt1"
+        app:layout_constraintStart_toEndOf="@id/txt1"
+        app:layout_constraintTop_toTopOf="@id/txt1" />
 
     <TextView
-        android:id="@+id/tvAddress"
+        android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -82,21 +83,22 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+        app:layout_constraintTop_toBottomOf="@id/txt1" />
 
     <TextView
+        android:id="@+id/tvAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/_220_street"
         android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/tvAddress"
-        app:layout_constraintStart_toEndOf="@id/tvAddress"
-        app:layout_constraintTop_toTopOf="@id/tvAddress" />
+        app:layout_constraintBottom_toBottomOf="@id/txt2"
+        app:layout_constraintStart_toEndOf="@id/txt2"
+        app:layout_constraintTop_toTopOf="@id/txt2" />
 
     <TextView
-        android:id="@+id/tvPhoneNumber"
+        android:id="@+id/txt3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -104,18 +106,19 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+        app:layout_constraintTop_toBottomOf="@id/txt2" />
 
     <TextView
+        android:id="@+id/tvPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/_777_888_999"
         android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/tvPhoneNumber"
-        app:layout_constraintStart_toEndOf="@id/tvPhoneNumber"
-        app:layout_constraintTop_toTopOf="@id/tvPhoneNumber" />
+        app:layout_constraintBottom_toBottomOf="@id/txt3"
+        app:layout_constraintStart_toEndOf="@id/txt3"
+        app:layout_constraintTop_toTopOf="@id/txt3" />
 
     <TextView
         android:id="@+id/tvProfileLink"
@@ -126,13 +129,14 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber" />
+        app:layout_constraintTop_toBottomOf="@id/txt3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/https_www_figma_com"
+        android:textIsSelectable="true"
         android:textColor="@color/olive_teal"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@id/tvProfileLink"
@@ -140,10 +144,10 @@
         app:layout_constraintTop_toTopOf="@id/tvProfileLink" />
 
     <TextView
-        android:id="@+id/tvBirthday"
+        android:id="@+id/txt4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:text="@string/birthday"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -151,18 +155,19 @@
         app:layout_constraintTop_toBottomOf="@id/tvProfileLink" />
 
     <TextView
+        android:id="@+id/tvBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/_19_9_2004"
         android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/tvBirthday"
-        app:layout_constraintStart_toEndOf="@id/tvBirthday"
-        app:layout_constraintTop_toTopOf="@id/tvBirthday" />
+        app:layout_constraintBottom_toBottomOf="@id/txt4"
+        app:layout_constraintStart_toEndOf="@id/txt4"
+        app:layout_constraintTop_toTopOf="@id/txt4" />
 
     <TextView
-        android:id="@+id/tvGender"
+        android:id="@+id/txt5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -170,18 +175,19 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/tvBirthday" />
+        app:layout_constraintTop_toBottomOf="@id/txt4" />
 
     <TextView
+        android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:text="@string/male"
         android:textColor="@color/olive_teal"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/tvGender"
-        app:layout_constraintStart_toEndOf="@id/tvGender"
-        app:layout_constraintTop_toTopOf="@id/tvGender" />
+        app:layout_constraintBottom_toBottomOf="@id/txt5"
+        app:layout_constraintStart_toEndOf="@id/txt5"
+        app:layout_constraintTop_toTopOf="@id/txt5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -189,4 +195,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="26dp" />
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/medium_orange"
+        android:text="Edit"
+        android:textStyle="bold"
+        app:cornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

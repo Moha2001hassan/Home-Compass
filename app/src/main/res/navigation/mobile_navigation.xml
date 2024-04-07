@@ -40,17 +40,17 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.fragments.AccountFragment"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.AccountFragment"
         android:label=""
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/reportFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.fragments.ReportFragment"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.ReportFragment"
         android:label=""
         tools:layout="@layout/fragment_report" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.fragments.NotificationsFragment"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.NotificationsFragment"
         android:label=""
         tools:layout="@layout/fragment_notifications" />
 </navigation>

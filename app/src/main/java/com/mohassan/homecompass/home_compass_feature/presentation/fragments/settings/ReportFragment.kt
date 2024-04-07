@@ -1,4 +1,4 @@
-package com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.fragments
+package com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater

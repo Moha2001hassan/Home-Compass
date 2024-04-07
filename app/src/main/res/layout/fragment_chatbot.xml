@@ -25,11 +25,11 @@
             app:endIconMode="custom"
             app:endIconTint="@color/olive_teal">
 
+<!--            android:background="@drawable/rounded_background"-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
                 android:ellipsize="end"
                 android:hint="@string/talk_to_bot"
                 android:inputType="textShortMessage"

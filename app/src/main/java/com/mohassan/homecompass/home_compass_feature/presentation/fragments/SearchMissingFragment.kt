@@ -12,7 +12,7 @@ class SearchMissingFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchMissingBinding
     private val galleryLauncher =
-        registerForActivityResult(ActivityResultContracts.GetContent()) {_ ->
+        registerForActivityResult(ActivityResultContracts.GetContent()) { _ ->
         }
 
     override fun onCreateView(
