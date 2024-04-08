@@ -9,6 +9,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ApiService {
@@ -28,4 +29,9 @@ interface ApiService {
 
     @GET("User/details")
     suspend fun getUserDetails(@Query("id") id: String): UserDetails
+
+    @PUT("User/details")
+    suspend fun updateUserDetails(@Query("id") id: String, @Body userDetails: UserDetails): Response<Void>
+
+
 }

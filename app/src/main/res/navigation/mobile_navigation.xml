@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.AccountFragment"
+        android:name="com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings.UserDetailsFragment"
         android:label=""
         tools:layout="@layout/fragment_account" />
     <fragment

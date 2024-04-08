@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etFirstName"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="24dp"
@@ -47,12 +47,13 @@
             android:inputType="text"
             android:maxLines="1"
             android:paddingHorizontal="15dp"
-            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintEnd_toStartOf="@+id/etLastName"
             app:layout_constraintStart_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/imgUpdatePicker" />
+            app:layout_constraintTop_toBottomOf="@+id/imgUpdatePicker"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="8dp"
@@ -61,13 +62,14 @@
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:paddingHorizontal="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/editText2"
+            app:layout_constraintEnd_toEndOf="@+id/etLastName"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintStart_toStartOf="@+id/etFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/etPhone"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="8dp"
@@ -76,27 +78,43 @@
             android:inputType="phone"
             android:maxLines="1"
             android:paddingHorizontal="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/editText3"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editText3"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintEnd_toEndOf="@+id/etFirstName"
+            app:layout_constraintStart_toStartOf="@+id/etEmail"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etAddress"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:background="@drawable/rounded_background"
-            android:hint="First Name"
-            android:paddingHorizontal="15dp"
-            android:maxLines="1"
+            android:hint="Address"
             android:inputType="text"
-            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            android:maxLines="1"
+            android:paddingHorizontal="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etPhone"
+            app:layout_constraintEnd_toEndOf="@+id/etEmail"
+            app:layout_constraintStart_toStartOf="@+id/etLastName"
+            app:layout_constraintTop_toTopOf="@+id/etPhone"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_background"
+            android:hint="Last Name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingHorizontal="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etFirstName"
             app:layout_constraintEnd_toEndOf="@+id/textView6"
-            app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toTopOf="@+id/editText" />
+            app:layout_constraintStart_toEndOf="@+id/etFirstName"
+            app:layout_constraintTop_toTopOf="@+id/etFirstName"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/idBtnDismiss"
+            android:id="@+id/btnDismiss"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -109,22 +127,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/idBtnPost"
-            app:layout_constraintTop_toBottomOf="@+id/btnDatePicker" />
+            app:layout_constraintStart_toEndOf="@+id/btnSaveData"
+            app:layout_constraintTop_toBottomOf="@+id/btnDatePicker"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/idBtnPost"
+            android:id="@+id/btnSaveData"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Post"
+            android:text="Save"
             android:textSize="15sp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/idBtnDismiss"
-            app:layout_constraintEnd_toStartOf="@+id/idBtnDismiss"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDismiss"
+            app:layout_constraintEnd_toStartOf="@+id/btnDismiss"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/idBtnDismiss" />
+            app:layout_constraintTop_toTopOf="@+id/btnDismiss" />
 
         <TextView
             android:id="@+id/textView8"
@@ -136,27 +155,26 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-            app:layout_constraintStart_toStartOf="@+id/editText4"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintStart_toStartOf="@+id/etPhone"
+            app:layout_constraintTop_toBottomOf="@+id/etPhone" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/textView8"
-            app:layout_constraintEnd_toEndOf="@+id/editText4"
+            app:layout_constraintEnd_toEndOf="@+id/etAddress"
             app:layout_constraintTop_toTopOf="@+id/textView8">
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rBtnMale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Male   " />
+                android:text="Male" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rBtnFemale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Female" />
@@ -167,7 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="27dp"
-            android:text="Birthday"
+            android:text="Birthday:"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -179,8 +197,20 @@
             android:layout_height="wrap_content"
             android:text="Picke Date"
             app:layout_constraintBottom_toBottomOf="@+id/textView12"
-            app:layout_constraintEnd_toEndOf="@+id/editText4"
+            app:layout_constraintEnd_toEndOf="@+id/radioGroup"
             app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="7/11/2001"
+            android:textColor="@color/g_red"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDatePicker"
+            app:layout_constraintEnd_toStartOf="@+id/btnDatePicker"
+            app:layout_constraintTop_toTopOf="@+id/btnDatePicker" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
