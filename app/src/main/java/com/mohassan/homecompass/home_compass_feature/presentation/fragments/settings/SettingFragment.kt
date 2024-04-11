@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
+import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
-import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 
 class SettingFragment : Fragment(), CustomDialogListener {
 

@@ -1,7 +1,6 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.fragments.settings
 
 import android.app.DatePickerDialog
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -54,10 +53,6 @@ class UserDetailsFragment : Fragment() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
         )[UserDetailsViewModel::class.java]
 
-        viewModel.userDetailsLiveData.observe(viewLifecycleOwner) { userDetails ->
-            Log.d("TestAccountFragment", userDetails.email)
-        }
-
         viewModel.selectedDateLiveData.observe(viewLifecycleOwner) { selectedDate ->
             bottomSheetBinding.tvDate.text = selectedDate
             Log.e("TestAccountFragment", selectedDate)
@@ -108,7 +103,6 @@ class UserDetailsFragment : Fragment() {
             email = bottomSheetBinding.etEmail.text.toString(),
             gender = getSelectedGender(),
             birthDate = bottomSheetBinding.tvDate.text.toString(),
-            photoURL = bottomSheetBinding.imgUpdatePicker.tag as? String ?: "",
             address = bottomSheetBinding.etAddress.text.toString(),
             phone = bottomSheetBinding.etPhone.text.toString()
         )

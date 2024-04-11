@@ -10,10 +10,15 @@ object Constants {
     const val OPEN_GOOGLE = "Opening Google..."
     const val OPEN_SEARCH = "Searching..."
 
-    const val SHARED_PREF = "MySharedPreferences"
-    const val PREF_NAME_KEY = "name"
-    const val PREF_PHONE_KEY = "phone"
-    const val PREF_EMAIL_KEY = "email"
-    const val PREF_IS_LOGIN = "isLogin"
-    const val LOGIN_VALUE = "login"
+    // UserDetails SharedPreferences
+    const val PREF_NAME = "UserDetails"
+    const val FIRST_NAME = "firstName"
+    const val LAST_NAME = "lastName"
+    const val EMAIL = "email"
+    const val GENDER = "gender"
+    const val BIRTHDATE = "birthDate"
+    const val ADDRESS = "address"
+    const val PHONE = "phone"
+    const val PHOTO_URI = "photoURL"
+
 }
