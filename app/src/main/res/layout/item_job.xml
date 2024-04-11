@@ -57,12 +57,14 @@
 
         <TextView
             android:id="@+id/txtJobAddress"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="22 *** street"
+            android:maxLines="1"
             android:textColor="@color/olive_teal"
             app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView11"
             app:layout_constraintTop_toTopOf="@+id/textView11" />
 
@@ -71,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Phone Number:"
+            android:text="Contact:"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView11"
@@ -79,12 +81,13 @@
 
         <TextView
             android:id="@+id/txtJobPhone"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="222-333-444"
             android:textColor="@color/olive_teal"
             app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView13"
             app:layout_constraintTop_toTopOf="@+id/textView13" />
 
@@ -100,16 +103,30 @@
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
-            android:id="@+id/txtJobPrice"
+            android:id="@+id/txtJobSalary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="200$"
-            android:textStyle="bold"
+            android:maxLength="5"
+            android:text="200"
             android:textColor="@color/medium_orange"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView15"
             app:layout_constraintStart_toEndOf="@+id/textView15"
             app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/txtJobSalary2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="5"
+            android:text="$"
+            android:textColor="@color/medium_orange"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtJobSalary"
+            app:layout_constraintStart_toEndOf="@+id/txtJobSalary"
+            app:layout_constraintTop_toTopOf="@+id/txtJobSalary"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/txtHours"
@@ -117,17 +134,18 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="9"
+            android:textStyle="bold"
             android:textColor="@color/medium_orange"
-            app:layout_constraintBottom_toBottomOf="@+id/txtJobPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/txtJobSalary"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txtJobPrice" />
+            app:layout_constraintTop_toTopOf="@+id/txtJobSalary" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="Hours per day:"
+            android:text="Hours/day:"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

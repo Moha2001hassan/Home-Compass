@@ -36,7 +36,13 @@ class SheltersAdapter(
         fun bind(shelter: FacilitiesBody) {
             binding.txtShelterName.text = shelter.name
             binding.txtShelterAddress.text = shelter.location
-            binding.txtShelterPhone.text = shelter.phone
+
+            Glide.with(binding.root.context)
+                .load(shelter.photoUrl)
+                .centerCrop()
+                .error(R.drawable.forget_pass)  // Error image if the URL is invalid
+                .into(binding.imgShelter)
+
 
             binding.btnContact.setOnClickListener {
                 val phoneNumber = shelter.phone

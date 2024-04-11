@@ -31,8 +31,9 @@ class JobAdapter(
             binding.txtJobTitle.text = job.title
             binding.txtJobDescription.text = job.description
             binding.txtJobPhone.text = job.contactInformation
-            //binding.txtJobPrice.text = job.price
-            //binding.txtHours.text = job.hours
+            binding.txtJobAddress.text = job.location
+            binding.txtJobSalary.text = job.salary
+            binding.txtHours.text = job.hours
         }
     }
 }

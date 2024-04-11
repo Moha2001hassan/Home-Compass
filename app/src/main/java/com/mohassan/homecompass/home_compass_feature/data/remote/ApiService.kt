@@ -24,7 +24,7 @@ interface ApiService {
     @GET("Facility/bycategory/7")
     suspend fun getShelter(): List<FacilitiesBody>
 
-    @GET("Facility/bycategory/2")
+    @GET("Facility/bycategory/10")
     suspend fun getRestaurants(): List<FacilitiesBody>
 
     @GET("User/details")

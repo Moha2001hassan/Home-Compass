@@ -71,7 +71,6 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
     private fun setupUI() {
         setupLogoutButton()
         observeUserDetails()
-        setupOptionsMenu()
     }
 
     private fun setupLogoutButton() {
@@ -90,11 +89,10 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
         }
     }
 
-    private fun setupOptionsMenu() {
-        // Inflate the menu
-        menuInflater.inflate(R.menu.main_menu, binding.toolbar.menu)
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.chatBot_menu -> {

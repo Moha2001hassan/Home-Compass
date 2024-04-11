@@ -49,52 +49,47 @@
             android:id="@+id/txt_rest_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="4dp"
-            android:maxLength="13"
+            android:maxLines="1"
             android:text="22 *** street"
             android:textColor="@color/olive_teal"
-            app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toTopOf="@+id/textView7" />
+            app:layout_constraintStart_toStartOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Phone:"
+            android:layout_marginTop="8dp"
+            android:text="Name of Restaurant:"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_rest_address" />
 
         <TextView
-            android:id="@+id/txt_rest_phone"
+            android:id="@+id/txt_rest_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="777-888-999"
+            android:text="Unity Soup Kitchen"
             android:textColor="@color/olive_teal"
-            app:layout_constraintBottom_toBottomOf="@+id/textView9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView9"
-            app:layout_constraintTop_toTopOf="@+id/textView9" />
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <Button
             android:id="@+id/btn_contact"
             style="@style/CustomButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="2dp"
             android:drawableLeft="@drawable/ic_whatsapp"
             android:text="Contact"
-            android:textSize="11dp"
+            android:textSize="13dp"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_rest_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

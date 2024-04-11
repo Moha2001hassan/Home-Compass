@@ -35,7 +35,7 @@ class RestaurantAdapter(
         @SuppressLint("SetTextI18n")
         fun bind(restaurant: FacilitiesBody) {
             binding.txtRestAddress.text = restaurant.location
-            binding.txtRestPhone.text = restaurant.phone
+            binding.txtRestName.text = restaurant.name
 
             Glide.with(binding.root.context)
                 .load(restaurant.photoUrl)

@@ -19,5 +19,10 @@ data class JobBody(
     @SerializedName("skills")
     val skills: List<String>,
     @SerializedName("title")
-    val title: String
+    val title: String,
+
+    @SerializedName("salary")
+    val salary: String,
+    @SerializedName("hours")
+    val hours: String,
 )
