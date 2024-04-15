@@ -20,7 +20,9 @@ import com.mohassan.homecompass.databinding.ActivityHomeBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 import com.mohassan.homecompass.core.utils.SharedPrefManager
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), CustomDialogListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

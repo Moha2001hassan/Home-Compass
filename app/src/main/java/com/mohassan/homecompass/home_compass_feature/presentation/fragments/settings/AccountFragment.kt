@@ -9,18 +9,24 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import com.mohassan.homecompass.databinding.FragmentAccountBinding
 import com.mohassan.homecompass.databinding.UserdataBottomSheetBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.UserDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import java.util.Calendar
-
-class UserDetailsFragment : Fragment() {
+@AndroidEntryPoint
+class AccountFragment : Fragment() {
 
     private lateinit var binding: FragmentAccountBinding
     private lateinit var bottomSheetBinding: UserdataBottomSheetBinding
     private lateinit var viewModel: UserDetailsViewModel
+    private val userViewModel: UserViewModel by viewModels()
 
     private val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -42,9 +48,20 @@ class UserDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch {
+            userViewModel.userData.collect { userData ->
+                userData?.let {
+                    binding.apply {
+                        tvAccountName.text = "${it.firstName} ${it.lastName} hi"
+                        tvEmail.text=it.email
+                        Log.d("Hi",tvAccountName.text.toString())
+                    }
+                }
+            }
+        }
         setupViewModel()
         setupEditButton()
-        setInitialUserData()
+     //   setInitialUserData()
     }
 
     private fun setupViewModel() {
@@ -83,32 +100,32 @@ class UserDetailsFragment : Fragment() {
             setContentView(bottomSheetBinding.root)
             setCancelable(false)
         }
-        setupBottomSheet(dialog)
+     //   setupBottomSheet(dialog)
         dialog.show()
     }
 
-    private fun setupBottomSheet(dialog: BottomSheetDialog) {
-        bottomSheetBinding.apply {
-            btnDismiss.setOnClickListener { dialog.dismiss() }
-            btnSaveData.setOnClickListener { saveUserData(dialog) }
-            imgUpdatePicker.setOnClickListener { galleryLauncher.launch("image/*") }
-            btnDatePicker.setOnClickListener { showDatePickerDialog() }
-        }
-    }
+//    private fun setupBottomSheet(dialog: BottomSheetDialog) {
+//        bottomSheetBinding.apply {
+//            btnDismiss.setOnClickListener { dialog.dismiss() }
+//            btnSaveData.setOnClickListener { saveUserData(dialog) }
+//            imgUpdatePicker.setOnClickListener { galleryLauncher.launch("image/*") }
+//            btnDatePicker.setOnClickListener { showDatePickerDialog() }
+//        }
+//    }
 
-    private fun saveUserData(dialog: BottomSheetDialog) {
-        viewModel.updateUserData(
-            firstName = bottomSheetBinding.etFirstName.text.toString(),
-            lastName = bottomSheetBinding.etLastName.text.toString(),
-            email = bottomSheetBinding.etEmail.text.toString(),
-            gender = getSelectedGender(),
-            birthDate = bottomSheetBinding.tvDate.text.toString(),
-            address = bottomSheetBinding.etAddress.text.toString(),
-            phone = bottomSheetBinding.etPhone.text.toString()
-        )
-        setInitialUserData()
-        dialog.dismiss()
-    }
+//    private fun saveUserData(dialog: BottomSheetDialog) {
+//        viewModel.updateUserData(
+//            firstName = bottomSheetBinding.etFirstName.text.toString(),
+//            lastName = bottomSheetBinding.etLastName.text.toString(),
+//            email = bottomSheetBinding.etEmail.text.toString(),
+//            gender = getSelectedGender(),
+//            birthDate = bottomSheetBinding.tvDate.text.toString(),
+//            address = bottomSheetBinding.etAddress.text.toString(),
+//            phone = bottomSheetBinding.etPhone.text.toString()
+//        )
+//      //  setInitialUserData()
+//        dialog.dismiss()
+//    }
 
     private fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()
