@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.Constants.SPLASH_SCREEN_DELAY
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashFragment : Fragment() {
 
@@ -19,12 +22,15 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
 
-        Handler().postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_onboarding1Fragment)
-        }, SPLASH_SCREEN_DELAY)
+        lifecycleScope.launch {
+            delay(SPLASH_SCREEN_DELAY)
+            navigateToOnboardingFragment()
+        }
 
         return view
     }
-
+    private fun navigateToOnboardingFragment() {
+        findNavController().navigate(R.id.action_splashFragment_to_onboarding1Fragment)
+    }
 
 }

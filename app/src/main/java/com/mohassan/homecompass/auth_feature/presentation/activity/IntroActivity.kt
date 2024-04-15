@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.NavHostFragment
+import com.mohassan.homecompass.R
 import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import com.mohassan.homecompass.databinding.ActivityIntroBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.MainActivity
@@ -25,8 +28,16 @@ class IntroActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
-                // User not logged in, stay in IntroActivity
-            }
+                val navHostFragment =
+                    supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+                val navController = navHostFragment.navController
+                navController.navigate(
+                    R.id.signInFragment,
+                    null,
+                    NavOptions.Builder()
+                        .setPopUpTo(R.id.splashFragment, true)
+                        .build()
+                )         }
         }
     }
 }

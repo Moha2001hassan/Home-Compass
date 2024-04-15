@@ -6,16 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
+import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SettingFragment : Fragment(), CustomDialogListener {
 
     private var _binding: FragmentSettingBinding? = null
+    private val viewModel :UserViewModel by viewModels()
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -48,8 +53,14 @@ class SettingFragment : Fragment(), CustomDialogListener {
         binding.linearDeleteAccount.setOnClickListener {
             showCustomDialog(R.drawable.ic_delete_account, requireContext(),this)
         }
+//        binding.linearLogOut.setOnClickListener {
+//            showCustomDialog(R.drawable.ic_logout_24, requireContext(),this)
+//        }
         binding.linearLogOut.setOnClickListener {
-            showCustomDialog(R.drawable.ic_logout_24, requireContext(),this)
+            viewModel.logout()
+            val intent = Intent(requireActivity(), IntroActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 
