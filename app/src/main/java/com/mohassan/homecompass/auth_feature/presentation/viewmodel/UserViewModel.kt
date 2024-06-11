@@ -1,16 +1,9 @@
 package com.mohassan.homecompass.auth_feature.presentation.viewmodel
 
-import android.app.usage.UsageEvents
-import android.media.metrics.Event
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.NavController
-import com.mohassan.homecompass.R
 import com.mohassan.homecompass.auth_feature.data.datastore.UserPreferences
 import com.mohassan.homecompass.auth_feature.data.remote.dto.RegisterRequestBody
 import com.mohassan.homecompass.auth_feature.domain.use_case.LoginUseCase
@@ -41,6 +34,7 @@ class UserViewModel @Inject constructor(
     val loginState: SharedFlow<Resource<Unit>> = _loginState
 
     val isLoggedIn: LiveData<Boolean> = userPreferences.isLoggedIn.asLiveData()
+    val isDonor: LiveData<Boolean> = userPreferences.isDonor.asLiveData()
 
     fun registerUser(
         firstName: String,
@@ -83,5 +77,8 @@ class UserViewModel @Inject constructor(
         viewModelScope.launch {
             userPreferences.setLoggedIn(false)
         }
+    }
+    suspend fun setIsDonor(isDonor: Boolean) {
+        userPreferences.setIsDonor(isDonor)
     }
 }

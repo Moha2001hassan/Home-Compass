@@ -41,6 +41,13 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_signUpOrSignInFragment)
         }
 
+        // Set listener for switch
+        binding.isDonorSwitch.setOnCheckedChangeListener { _, isChecked ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.setIsDonor(isChecked)
+            }
+        }
+
         // Observe registration status
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.registrationState.collect { resource ->

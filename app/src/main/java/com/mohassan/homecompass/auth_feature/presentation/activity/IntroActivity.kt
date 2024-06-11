@@ -3,6 +3,7 @@ package com.mohassan.homecompass.auth_feature.presentation.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
@@ -25,19 +26,24 @@ class IntroActivity : AppCompatActivity() {
 
         viewModel.isLoggedIn.observe(this) { isLoggedIn ->
             if (isLoggedIn) {
+                Log.e("IntroActivity", "User is logged in and value is $isLoggedIn")
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
-                val navHostFragment =
-                    supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-                val navController = navHostFragment.navController
-                navController.navigate(
-                    R.id.signInFragment,
-                    null,
-                    NavOptions.Builder()
-                        .setPopUpTo(R.id.splashFragment, true)
-                        .build()
-                )         }
+//                Log.e("IntroActivity", "User is not logged in")
+//                val navHostFragment =
+//                    supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+//                val navController = navHostFragment.navController
+//                navController.navigate(
+//                    R.id.onboarding1Fragment,
+//                    null,
+//                    NavOptions.Builder()
+//                        .setPopUpTo(R.id.splashFragment, true)
+//                        .build()
+//                )
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ package com.mohassan.homecompass.auth_feature.presentation.fragments
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,7 @@ class SplashFragment : Fragment() {
         return view
     }
     private fun navigateToOnboardingFragment() {
+        Log.d("SplashFragment", "Navigating to onboarding fragment")
         findNavController().navigate(R.id.action_splashFragment_to_onboarding1Fragment)
     }
 
