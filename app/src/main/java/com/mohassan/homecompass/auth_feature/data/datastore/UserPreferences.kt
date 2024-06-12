@@ -42,15 +42,17 @@ class UserPreferences @Inject constructor(private val context: Context) {
             // You can save other user data as well
         }
     }
+
     suspend fun getUserData(): RegisterRequestBody? {
         val data = context.dataStore.data.first()
         return if (data.contains(USER_FIRST_NAME) && data.contains(USER_LAST_NAME) &&
-            data.contains(USER_USERNAME) && data.contains(USER_EMAIL)) {
+            data.contains(USER_USERNAME) && data.contains(USER_EMAIL)
+        ) {
             RegisterRequestBody(
-                data[USER_FIRST_NAME] ?: "",
-                data[USER_LAST_NAME] ?: "",
-                data[USER_USERNAME] ?: "",
-                data[USER_EMAIL] ?: "",
+                data[USER_FIRST_NAME] ?: "My",
+                data[USER_LAST_NAME] ?: "Name",
+                data[USER_USERNAME] ?: "user",
+                data[USER_EMAIL] ?: "example@email.com",
                 "" // Password is not stored
             )
         } else {
@@ -64,6 +66,7 @@ class UserPreferences @Inject constructor(private val context: Context) {
         val USER_LAST_NAME = stringPreferencesKey("user_last_name")
         val USER_USERNAME = stringPreferencesKey("user_username")
         val USER_EMAIL = stringPreferencesKey("user_email")
+
         val IS_DONOR = booleanPreferencesKey("is_donor")
     }
 }

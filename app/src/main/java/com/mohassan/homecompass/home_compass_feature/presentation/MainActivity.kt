@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import androidx.activity.viewModels
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,30 +14,40 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.ActivityHomeBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
-import com.mohassan.homecompass.core.utils.SharedPrefManager
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), CustomDialogListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var viewModel: MainActivityViewModel
+    //private val viewModel: MainActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        SharedPrefManager.init(this)
+
+//        lifecycleScope.launch {
+//            viewModel.userDetails.collect { userData ->
+//                userData?.let {
+//                    binding.apply {
+//                        val headerName = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_username)
+//                        headerName.text = "${it.firstName} ${it.lastName}"
+//                    }
+//                }
+//            }
+//        }
+
         setupBinding()
         setupActionBar()
         setupNavigation()
-        setupViewModel()
-        setupUI()
+        setupLogoutButton()
     }
 
     private fun setupBinding() {
@@ -65,29 +76,9 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
         navView.setupWithNavController(navController)
     }
 
-    private fun setupViewModel() {
-        viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
-        viewModel.loadUserDetails()
-    }
-
-    private fun setupUI() {
-        setupLogoutButton()
-        observeUserDetails()
-    }
-
     private fun setupLogoutButton() {
         binding.logoutBtn.setOnClickListener {
             showCustomDialog(R.drawable.ic_logout_24, this, this)
-        }
-    }
-
-    private fun observeUserDetails() {
-        viewModel.userDetailsLiveData.observe(this) { userDetails ->
-            val headerName = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_username)
-            headerName.text = "${userDetails.firstName} ${userDetails.lastName}"
-
-            val headerEmail = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_email)
-            headerEmail.text = userDetails.email
         }
     }
 

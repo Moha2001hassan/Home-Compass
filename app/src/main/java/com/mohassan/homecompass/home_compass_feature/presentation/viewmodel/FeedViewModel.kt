@@ -22,10 +22,17 @@ class FeedViewModel : ViewModel() {
     }
 
     fun getPosts() {
-        viewModelScope.launch {
-            val fetchedPosts = RetrofitInstance.api.getPosts()
-            _posts.value = fetchedPosts
+        try {
+            viewModelScope.launch {
+                val fetchedPosts = RetrofitInstance.api.getPosts()
+                _posts.value = fetchedPosts
+            }
+            Log.d("FeedViewModel", "Posts fetched successfully")
+        } catch (e: Exception) {
+            Log.e("FeedViewModel", "Error fetching posts: ${e.message}")
+            _posts.value = emptyList()
         }
+
     }
 
     fun publishPost(title: String, content: String) {

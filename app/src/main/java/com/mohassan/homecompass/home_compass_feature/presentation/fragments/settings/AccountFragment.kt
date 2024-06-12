@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -20,6 +19,7 @@ import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.User
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.util.Calendar
+
 @AndroidEntryPoint
 class AccountFragment : Fragment() {
 
@@ -32,7 +32,6 @@ class AccountFragment : Fragment() {
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             uri?.let {
                 bottomSheetBinding.imgUpdatePicker.setImageURI(it)
-                Log.d("TestAccountFragment", "$it ______________________")
             }
         }
 
@@ -61,7 +60,6 @@ class AccountFragment : Fragment() {
         }
         setupViewModel()
         setupEditButton()
-     //   setInitialUserData()
     }
 
     private fun setupViewModel() {
@@ -82,6 +80,7 @@ class AccountFragment : Fragment() {
         }
     }
 
+    /*
     private fun setInitialUserData() {
         val initialUserData = viewModel.getUserData()
         binding.apply {
@@ -93,6 +92,7 @@ class AccountFragment : Fragment() {
             tvGender.text = initialUserData.gender
         }
     }
+    */
 
     private fun showBottomSheetDialog() {
         val dialog = BottomSheetDialog(requireContext())
@@ -100,20 +100,20 @@ class AccountFragment : Fragment() {
             setContentView(bottomSheetBinding.root)
             setCancelable(false)
         }
-     //   setupBottomSheet(dialog)
+        setupBottomSheet(dialog)
         dialog.show()
     }
 
-//    private fun setupBottomSheet(dialog: BottomSheetDialog) {
-//        bottomSheetBinding.apply {
-//            btnDismiss.setOnClickListener { dialog.dismiss() }
-//            btnSaveData.setOnClickListener { saveUserData(dialog) }
-//            imgUpdatePicker.setOnClickListener { galleryLauncher.launch("image/*") }
-//            btnDatePicker.setOnClickListener { showDatePickerDialog() }
-//        }
-//    }
+    private fun setupBottomSheet(dialog: BottomSheetDialog) {
+        bottomSheetBinding.apply {
+            btnDismiss.setOnClickListener { dialog.dismiss() }
+            btnSaveData.setOnClickListener { saveUserData(dialog) }
+            imgUpdatePicker.setOnClickListener { galleryLauncher.launch("image/*") }
+            btnDatePicker.setOnClickListener { showDatePickerDialog() }
+        }
+    }
 
-//    private fun saveUserData(dialog: BottomSheetDialog) {
+    private fun saveUserData(dialog: BottomSheetDialog) {
 //        viewModel.updateUserData(
 //            firstName = bottomSheetBinding.etFirstName.text.toString(),
 //            lastName = bottomSheetBinding.etLastName.text.toString(),
@@ -123,9 +123,9 @@ class AccountFragment : Fragment() {
 //            address = bottomSheetBinding.etAddress.text.toString(),
 //            phone = bottomSheetBinding.etPhone.text.toString()
 //        )
-//      //  setInitialUserData()
-//        dialog.dismiss()
-//    }
+        //setInitialUserData()
+        dialog.dismiss()
+    }
 
     private fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()
@@ -145,12 +145,12 @@ class AccountFragment : Fragment() {
         ).show()
     }
 
-    private fun getSelectedGender(): String {
-        val checkedRadioButtonId = bottomSheetBinding.radioGroup.checkedRadioButtonId
-        return if (checkedRadioButtonId != -1) {
-            bottomSheetBinding.radioGroup.findViewById<RadioButton>(checkedRadioButtonId).text.toString()
-        } else {
-            "male"
-        }
-    }
+//    private fun getSelectedGender(): String {
+//        val checkedRadioButtonId = bottomSheetBinding.radioGroup.checkedRadioButtonId
+//        return if (checkedRadioButtonId != -1) {
+//            bottomSheetBinding.radioGroup.findViewById<RadioButton>(checkedRadioButtonId).text.toString()
+//        } else {
+//            "male"
+//        }
+//    }
 }

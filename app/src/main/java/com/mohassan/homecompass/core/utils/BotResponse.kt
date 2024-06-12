@@ -28,9 +28,9 @@ object BotResponse {
 
             //Math calculations
             message.contains("solve") -> {
-                val equation: String? = message.substringAfterLast("solve")
+                val equation: String = message.substringAfterLast("solve")
                 return try {
-                    val answer = SolveMath.solveMath(equation ?: "0")
+                    val answer = SolveMath.solveMath(equation)
                     "$answer"
 
                 } catch (e: Exception) {
@@ -65,6 +65,11 @@ object BotResponse {
                 val date = sdf.format(Date(timeStamp.time))
 
                 date.toString()
+            }
+
+            //I need Phone number or email
+            message.contains("phone") || message.contains("contact") -> {
+                "Feel free to contact us on WhatsApp: 0123456789 \nor from our email: homecompass@example.com"
             }
 
             // speak arabic?

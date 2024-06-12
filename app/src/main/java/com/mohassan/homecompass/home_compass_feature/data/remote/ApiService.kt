@@ -32,6 +32,4 @@ interface ApiService {
 
     @PUT("User/details")
     suspend fun updateUserDetails(@Query("id") id: String, @Body userDetails: UserDetails): Response<Void>
-
-
 }

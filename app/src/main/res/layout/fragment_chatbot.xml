@@ -17,23 +17,27 @@
             android:id="@+id/textInputLayout4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             app:endIconContentDescription="@string/send"
             app:endIconDrawable="@drawable/ic_bot"
             app:endIconMode="custom"
             app:endIconTint="@color/olive_teal">
 
-<!--            android:background="@drawable/rounded_background"-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_message"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ellipsize="end"
                 android:hint="@string/talk_to_bot"
-                android:inputType="textShortMessage"
-                android:maxLines="1"
+                android:inputType="textMultiLine"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:maxLines="5"
+                android:minLines="1"
+                android:scrollbars="vertical"
+                android:imeOptions="actionDone"
                 android:textColorHint="@color/olive_teal" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,6 +55,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="3dp"
         android:id="@+id/rv_messages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

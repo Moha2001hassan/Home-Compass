@@ -44,6 +44,7 @@ class UserDetailsViewModel(application: Application) : AndroidViewModel(applicat
         SharedPrefManager.putString(PHONE, phone)
     }
 
+    /*
     fun getUserData(): UserDetails {
         // Retrieve user data from SharedPreferencesManager
         return UserDetails(
@@ -57,6 +58,7 @@ class UserDetailsViewModel(application: Application) : AndroidViewModel(applicat
             phone = SharedPrefManager.getString(PHONE, "0107101171").toString()
         )
     }
+    */
 }
 
 
