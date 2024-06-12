@@ -2,6 +2,7 @@ package com.mohassan.homecompass.home_compass_feature.presentation
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -28,21 +29,22 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
-    //private val viewModel: MainActivityViewModel by viewModels()
+    private val viewModel: MainActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        lifecycleScope.launch {
-//            viewModel.userDetails.collect { userData ->
-//                userData?.let {
-//                    binding.apply {
-//                        val headerName = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_username)
-//                        headerName.text = "${it.firstName} ${it.lastName}"
-//                    }
-//                }
-//            }
-//        }
+        lifecycleScope.launch {
+            viewModel.userDetails.collect { userData ->
+                userData?.let {
+                    binding.apply {
+                        val headerName = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_username)
+                        headerName.text = "${it.firstName} ${it.lastName}"
+                        Log.e("MainActivity", "onCreate: ${it.firstName}")
+                    }
+                }
+            }
+        }
 
         setupBinding()
         setupActionBar()
