@@ -51,6 +51,14 @@ class SheltersAdapter(
                 context.startActivity(intent)
             }
 
+
+            binding.imgLocation.setOnClickListener {
+                //val shelterLocation = shelter.location
+                val shelterLocation = "almashaya alsuflia next to the police club, Dakahlia Governorate 35111"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("geo:0,0?q=$shelterLocation")
+                context.startActivity(intent)
+            }
         }
     }
 }

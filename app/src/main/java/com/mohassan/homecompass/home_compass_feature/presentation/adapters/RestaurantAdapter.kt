@@ -49,6 +49,14 @@ class RestaurantAdapter(
                 intent.data = Uri.parse("tel:$phoneNumber")
                 context.startActivity(intent)
             }
+
+            binding.imgRestaurant.setOnClickListener {
+                //val restaurantLocation = restaurant.location
+                val restaurantLocation = "almashaya alsuflia next to the police club, Dakahlia Governorate 35111"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("geo:0,0?q=$restaurantLocation")
+                context.startActivity(intent)
+            }
         }
     }
 }

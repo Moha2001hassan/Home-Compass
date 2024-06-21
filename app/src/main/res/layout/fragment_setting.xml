@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_compass_feature.presentation.fragments.SettingFragment">
+    tools:context=".home_compass_feature.presentation.fragments.settings.SettingFragment">
 
     <ImageView
         android:id="@+id/ivBackArrow"
