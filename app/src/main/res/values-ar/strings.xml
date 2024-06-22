@@ -80,4 +80,5 @@
     <string name="yes">تأكيد</string>
     <string name="name_of_restaurant">اسم المطعم:</string>
     <string name="contact">اتصال</string>
+    <string name="scan_the_person_s_photo_for_search">Scan the person\'s photo for search</string>
 </resources>
