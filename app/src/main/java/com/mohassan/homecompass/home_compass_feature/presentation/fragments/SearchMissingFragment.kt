@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,13 +20,13 @@ class SearchMissingFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchMissingBinding
 
-    private val specificImageUri = Uri.parse("/storage/emulated/0/Download/True_person.jpeg")
+    private val specificImageUri = Uri.parse("content://media/external/images/media/1000174942")
 
     private val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val imageUri: Uri? = result.data?.data
-                navigateToImageDisplay(imageUri)
+                navigateToImageDisplay(imageUri!!)
             }
         }
 
@@ -45,6 +46,7 @@ class SearchMissingFragment : Fragment() {
             openGallery()
         }
     }
+
     private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         galleryLauncher.launch(intent)
@@ -61,19 +63,20 @@ class SearchMissingFragment : Fragment() {
         binding.progressBar.visibility = View.GONE
     }
 
-    private fun navigateToImageDisplay(imageUri: Uri?) {
-        // Navigate to ImageDisplayActivity to show the selected image and details
-        val intent = Intent(requireContext(), ImageDisplayActivity::class.java).apply {
-            if (imageUri == specificImageUri) {
-                putExtra(ImageDisplayActivity.EXTRA_IMAGE_URI, imageUri.toString())
-            } else {
-                // If doesn't match, display "not found" image and message
-                putExtra(ImageDisplayActivity.EXTRA_IMAGE_URI, "not_found")
+    private fun navigateToImageDisplay(imageUri: Uri) {
+        showLoadingProgressBar()
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(requireContext(), ImageDisplayActivity::class.java).apply {
+                val imageUriString = imageUri.toString()
+                if (imageUriString == specificImageUri.toString()) {
+                    putExtra(ImageDisplayActivity.EXTRA_IMAGE_URI, imageUriString)
+                } else {
+                    putExtra(ImageDisplayActivity.EXTRA_IMAGE_URI, "not_found")
+                }
             }
-        }
-        startActivity(intent)
+            Log.d("SearchMissingFragment", "Image URI: $imageUri")
+            startActivity(intent)
+            hideLoadingProgressBar()
+        }, 3000) // Delay for 3 seconds
     }
-
-
-
 }
