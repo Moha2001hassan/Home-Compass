@@ -21,10 +21,10 @@ interface ApiService {
     @GET("Job")
     suspend fun getJobs(): List<JobBody>
 
-    @GET("Facility/bycategory/7")
+    @GET("Facility/bycategory/10")
     suspend fun getShelter(): List<FacilitiesBody>
 
-    @GET("Facility/bycategory/10")
+    @GET("Facility/bycategory/7")
     suspend fun getRestaurants(): List<FacilitiesBody>
 
     @GET("User/details")

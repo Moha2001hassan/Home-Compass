@@ -17,7 +17,6 @@ import com.mohassan.homecompass.databinding.FragmentFeedBinding
 import com.mohassan.homecompass.home_compass_feature.data.remote.dto.Post
 import com.mohassan.homecompass.home_compass_feature.presentation.adapters.FeedAdapter
 import com.mohassan.homecompass.home_compass_feature.presentation.viewmodel.FeedViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
 class FeedFragment : Fragment() {
 
@@ -38,7 +37,7 @@ class FeedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //setupViewModel()
+        setupViewModel()
         setupRecyclerView()
         setupFab()
     }

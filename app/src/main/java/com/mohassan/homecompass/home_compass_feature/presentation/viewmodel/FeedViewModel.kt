@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.mohassan.homecompass.core.utils.Constants.USER_ID
 import com.mohassan.homecompass.core.utils.GetCurrentDateTime.getCurrentDateTime
 import com.mohassan.homecompass.home_compass_feature.data.remote.RetrofitInstance
 import com.mohassan.homecompass.home_compass_feature.data.remote.dto.Post
@@ -27,23 +28,19 @@ class FeedViewModel : ViewModel() {
                 val fetchedPosts = RetrofitInstance.api.getPosts()
                 _posts.value = fetchedPosts
             }
-            Log.d("FeedViewModel", "Posts fetched successfully")
         } catch (e: Exception) {
             Log.e("FeedViewModel", "Error fetching posts: ${e.message}")
             _posts.value = emptyList()
         }
-
     }
 
     fun publishPost(title: String, content: String) {
-        //get userId from shared pref saved when login
-        val userId = "a9c56a87-6c1b-45c3-831b-53ef4713111d"
 
         val postRequest = PostRequest(
             title = title,
             content = content,
             publishedOn = getCurrentDateTime(), // ex. "2024-04-02T12:11:53.48Z"
-            userId = userId
+            userId = USER_ID
         )
 
         viewModelScope.launch {
