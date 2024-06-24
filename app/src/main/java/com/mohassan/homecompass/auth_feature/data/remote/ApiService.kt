@@ -5,6 +5,7 @@ import com.mohassan.homecompass.auth_feature.data.remote.dto.RegisterRequestBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
     @POST("/Auth/register")
@@ -12,7 +13,8 @@ interface ApiService {
 
     @POST("/Auth/confirmEmail")
     suspend fun confirmEmail(
-        @Body confirmEmailRequest: ConfirmEmailRequest
+        @Query("email") email: String,
+        @Query("token") token: String
     ): Response<Any>
 
     @POST("/Auth/login")

@@ -56,7 +56,7 @@ class SignUpFragment : Fragment() {
                             "Registration is done successfully , please go to the Confirmation Screen",
                             Toast.LENGTH_LONG
                         ).show()
-                        findNavController().navigate(R.id.action_signUpFragment_to_confirmEmailFragment)
+                        findNavController().navigate(R.id.confirmEmailFragment)
 
                     }
 
