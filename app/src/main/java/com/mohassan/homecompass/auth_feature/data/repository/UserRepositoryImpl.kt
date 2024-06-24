@@ -1,10 +1,12 @@
 package com.mohassan.homecompass.auth_feature.data.repository
 
 import com.mohassan.homecompass.auth_feature.data.remote.ApiService
+import com.mohassan.homecompass.auth_feature.data.remote.ConfirmEmailRequest
 import com.mohassan.homecompass.auth_feature.data.remote.dto.LoginRequestBody
 import com.mohassan.homecompass.auth_feature.data.remote.dto.RegisterRequestBody
 import com.mohassan.homecompass.auth_feature.domain.repository.UserRepository
 import com.mohassan.homecompass.core.utils.Resource
+import retrofit2.Response
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(private val apiService: ApiService) : UserRepository {
@@ -33,6 +35,10 @@ class UserRepositoryImpl @Inject constructor(private val apiService: ApiService)
         } catch (e: Exception) {
             Resource.Error("Network error: ${e.message}")
         }
+    }
+
+    override suspend fun confirmEmail(email: String, token: String): Response<Any> {
+        return apiService.confirmEmail(email, token)
     }
 
     override suspend fun loginUser(email: String, password: String): Resource<Unit> {

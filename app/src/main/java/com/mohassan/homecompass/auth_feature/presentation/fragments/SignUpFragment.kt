@@ -51,7 +51,13 @@ class SignUpFragment : Fragment() {
 
                     is Resource.Success -> {
                         progressDialog.dismiss()
-                        startActivity(Intent(requireContext(), MainActivity::class.java))
+                        Toast.makeText(
+                            requireActivity(),
+                            "Registration is done successfully , please go to the Confirmation Screen",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        findNavController().navigate(R.id.confirmEmailFragment)
+
                     }
 
                     is Resource.Error -> {

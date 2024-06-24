@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.databinding.FragmentOnboarding1Binding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Onboarding1Fragment : Fragment() {
 
     private lateinit var binding: FragmentOnboarding1Binding

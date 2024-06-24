@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_back_confirm_email"
+            android:layout_width="24dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView_confirm_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmation Email"
+            android:textColor="@color/olive_teal"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_back_confirm_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_back_confirm_email" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_back_confirm_email"
+            app:startIconDrawable="@drawable/ic_email_24"
+            app:startIconTint="@color/olive_teal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/olive_teal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_token"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout_email"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout_email"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_email"
+            app:startIconDrawable="@drawable/ic_lock_24"
+            app:startIconTint="@color/olive_teal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_token"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter token"
+                android:inputType="text"
+                android:textColorHint="@color/olive_teal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/CustomButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="32dp"
+            android:text="Submit"
+            android:textSize="20sp"
+            app:cornerRadius="13dp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout_token"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout_token"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_token" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

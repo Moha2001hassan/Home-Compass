@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_onboarding1Fragment_to_signUpOrSignInFragment"
             app:destination="@id/signUpOrSignInFragment" />
+        <action
+            android:id="@+id/action_onboarding1Fragment_to_confirmEmailFragment"
+            app:destination="@id/confirmEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboarding2Fragment"
@@ -58,6 +61,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_signUpOrSignInFragment"
             app:destination="@id/signUpOrSignInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_confirmEmailFragment"
+            app:destination="@id/confirmEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -78,6 +84,15 @@
         tools:layout="@layout/fragment_forget_pass" >
         <action
             android:id="@+id/action_forgetPasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmEmailFragment"
+        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.ConfirmEmailFragment"
+        android:label="ConfirmEmailFragment"
+        tools:layout="@layout/fragment_confirm_email">
+        <action
+            android:id="@+id/action_confirmEmailFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
 </navigation>
