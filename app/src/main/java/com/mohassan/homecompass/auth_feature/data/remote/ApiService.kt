@@ -10,6 +10,15 @@ interface ApiService {
     @POST("/Auth/register")
     suspend fun registerUser(@Body requestBody: RegisterRequestBody): Response<Any>
 
+    @POST("/Auth/confirmEmail")
+    suspend fun confirmEmail(
+        @Body confirmEmailRequest: ConfirmEmailRequest
+    ): Response<Any>
+
     @POST("/Auth/login")
     suspend fun loginUser(@Body requestBody: LoginRequestBody): Response<Any>
 }
+data class ConfirmEmailRequest(
+    val email: String,
+    val token: String
+)

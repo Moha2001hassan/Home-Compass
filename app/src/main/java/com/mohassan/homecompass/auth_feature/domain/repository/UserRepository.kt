@@ -11,5 +11,10 @@ interface UserRepository {
         password: String
     ): Resource<Unit>
 
+    suspend fun confirmEmail(
+        email: String,
+        token: String
+    ): Resource<Unit>
+
     suspend fun loginUser(email: String, password: String): Resource<Unit>
 }
