@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupBinding()
 
         lifecycleScope.launch {
             viewModel.userDetails.collect { userData ->
@@ -45,8 +46,6 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
                 }
             }
         }
-
-        setupBinding()
         setupActionBar()
         setupNavigation()
         setupLogoutButton()

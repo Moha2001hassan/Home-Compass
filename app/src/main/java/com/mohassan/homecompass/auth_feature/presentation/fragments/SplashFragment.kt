@@ -31,8 +31,6 @@ class SplashFragment : Fragment() {
         return view
     }
     private fun navigateToOnboardingFragment() {
-        Log.d("SplashFragment", "Navigating to onboarding fragment")
         findNavController().navigate(R.id.action_splashFragment_to_onboarding1Fragment)
     }
-
 }

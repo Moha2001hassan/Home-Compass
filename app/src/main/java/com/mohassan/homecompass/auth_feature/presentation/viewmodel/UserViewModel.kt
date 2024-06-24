@@ -1,5 +1,6 @@
 package com.mohassan.homecompass.auth_feature.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -77,8 +78,5 @@ class UserViewModel @Inject constructor(
         viewModelScope.launch {
             userPreferences.setLoggedIn(false)
         }
-    }
-    suspend fun setIsDonor(isDonor: Boolean) {
-        userPreferences.setIsDonor(isDonor)
     }
 }

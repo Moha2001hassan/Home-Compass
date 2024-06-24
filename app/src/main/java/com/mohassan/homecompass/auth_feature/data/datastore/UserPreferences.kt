@@ -1,6 +1,7 @@
 package com.mohassan.homecompass.auth_feature.data.datastore
 
 import android.content.Context
+import android.util.Log
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
@@ -28,8 +29,12 @@ class UserPreferences @Inject constructor(private val context: Context) {
     }
 
     suspend fun setIsDonor(isDonor: Boolean) {
-        context.dataStore.edit { preferences ->
-            preferences[IS_DONOR] = isDonor
+        try {
+            context.dataStore.edit { preferences ->
+                preferences[IS_DONOR] = isDonor
+            }
+        } catch (e: Exception) {
+            Log.e("UserPreferences", "Error setting isDonor in DataStore", e)
         }
     }
 
