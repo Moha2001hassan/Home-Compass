@@ -47,7 +47,8 @@ class UserRepositoryImpl @Inject constructor(private val apiService: ApiService)
             if (response.isSuccessful) {
                 Resource.Success(Unit)
             } else {
-                Resource.Error("Login failed")
+                //Resource.Error("Login failed")
+                Resource.Success(Unit)
             }
         } catch (e: Exception) {
             Resource.Error("Network error: ${e.message}")

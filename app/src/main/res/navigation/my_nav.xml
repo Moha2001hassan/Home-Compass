@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_confirmEmailFragment"
             app:destination="@id/confirmEmailFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"

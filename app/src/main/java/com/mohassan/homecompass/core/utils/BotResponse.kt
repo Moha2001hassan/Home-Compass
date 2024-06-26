@@ -77,6 +77,11 @@ object BotResponse {
                 "للاسف لا استطيع التحدث بالعربيه الان، لكني تحت التطوير وقد ادعم اللغه العربيه قريبا"
             }
 
+            // speak arabic?
+            message.contains("thanks") || message.contains("thank you") -> {
+                "You're welcome!"
+            }
+
             //Open Google
             message.contains("open") && message.contains("google") -> {
                 OPEN_GOOGLE

@@ -15,21 +15,24 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.ActivityHomeBinding
 import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
+import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), CustomDialogListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
     private val viewModel: MainActivityViewModel by viewModels()
+    private val userViewModel : UserViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +82,15 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
 
     private fun setupLogoutButton() {
         binding.logoutBtn.setOnClickListener {
-            showCustomDialog(R.drawable.ic_logout_24, this, this)
+            showCustomDialog(R.drawable.ic_logout_24, this) { result ->
+                if (result) {
+                    userViewModel.logout()
+                    val intent = Intent(this, IntroActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                // No need to handle the false case since the dialog will be dismissed automatically
+            }
         }
     }
 
@@ -105,15 +116,5 @@ class MainActivity : AppCompatActivity(), CustomDialogListener {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    override fun onLogoutClicked() {
-        val intent = Intent(this, IntroActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    override fun onDeleteAccount() {
-        //("Not yet implemented")
     }
 }

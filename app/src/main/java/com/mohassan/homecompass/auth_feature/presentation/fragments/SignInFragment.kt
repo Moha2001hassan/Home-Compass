@@ -72,9 +72,9 @@ class SignInFragment : Fragment() {
                             resource.message ?: "Login failed",
                             Toast.LENGTH_SHORT
                         ).show()
-
                     }
                 }
             }
         }
-    }}
+    }
+}

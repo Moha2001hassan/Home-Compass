@@ -40,6 +40,12 @@ class SignUpFragment : Fragment() {
         binding.imgBack.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signUpOrSignInFragment)
         }
+        binding.txtMoveLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
+        }
+        binding.txtConfirmEmail.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_confirmEmailFragment)
+        }
 
         // Observe registration status
         viewLifecycleOwner.lifecycleScope.launch {
