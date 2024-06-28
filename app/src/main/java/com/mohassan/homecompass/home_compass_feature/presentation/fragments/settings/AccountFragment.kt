@@ -25,7 +25,7 @@ class AccountFragment : Fragment() {
 
     private lateinit var binding: FragmentAccountBinding
     private lateinit var bottomSheetBinding: UserdataBottomSheetBinding
-    private lateinit var viewModel: UserDetailsViewModel
+    private val viewModel: UserDetailsViewModel by viewModels()
     private val userViewModel: UserViewModel by viewModels()
 
     private val galleryLauncher =
@@ -47,27 +47,28 @@ class AccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViewModel()
+        setupEditButton()
+
         lifecycleScope.launch {
-            userViewModel.userData.collect { userData ->
+            viewModel.userData.collect { userData ->
                 userData?.let {
                     binding.apply {
-                        tvAccountName.text = "${it.firstName} ${it.lastName} hi"
-                        tvEmail.text=it.email
-                        Log.d("Hi",tvAccountName.text.toString())
+                        tvAccountName.text = "${it.firstName} ${it.lastName}, hi👋"
+                        tvEmail.text = it.email
+                        tvUserName.text = it.username
+                        Log.d("Hi", tvAccountName.text.toString())
                     }
                 }
             }
         }
-        setupViewModel()
-        setupEditButton()
+
+        userViewModel.isDonor.observe(viewLifecycleOwner) { isDonor ->
+            Log.e("AccountFragment", "Is user donor?: $isDonor")
+        }
     }
 
     private fun setupViewModel() {
-        viewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
-        )[UserDetailsViewModel::class.java]
-
         viewModel.selectedDateLiveData.observe(viewLifecycleOwner) { selectedDate ->
             bottomSheetBinding.tvDate.text = selectedDate
             Log.e("TestAccountFragment", selectedDate)

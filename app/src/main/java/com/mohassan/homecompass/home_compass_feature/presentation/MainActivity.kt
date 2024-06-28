@@ -20,7 +20,6 @@ import androidx.lifecycle.lifecycleScope
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.ActivityHomeBinding
-import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                     binding.apply {
                         val headerName = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_username)
                         headerName.text = "${it.firstName} ${it.lastName}"
+                        val headerEmail = binding.navView.getHeaderView(0).findViewById<TextView>(R.id.txt_header_email)
+                        headerEmail.text = it.email
                         Log.e("MainActivity", "onCreate: ${it.firstName}")
                     }
                 }

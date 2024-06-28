@@ -21,6 +21,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
+    private var isDonor = false
     private val viewModel: UserViewModel by viewModels()
     private val progressDialog by lazy { ProgressDialog.createProgressDialog(requireActivity()) }
 
@@ -47,6 +48,16 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_confirmEmailFragment)
         }
 
+        // Set listener for switch
+        binding.isDonorSwitch.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(requireActivity(), "Is Donor: $isChecked", Toast.LENGTH_SHORT).show()
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.setIsDonor(isChecked)
+            }
+            binding.btnSignUp.text = if (isChecked) "Sign Up" else "Continue"
+            isDonor = isChecked
+        }
+
         // Observe registration status
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.registrationState.collect { resource ->
@@ -70,7 +81,7 @@ class SignUpFragment : Fragment() {
                         progressDialog.dismiss()
                         Toast.makeText(
                             requireActivity(),
-                            resource.message.toString(),
+                            "Registration is failed",
                             Toast.LENGTH_LONG
                         ).show()
                     }

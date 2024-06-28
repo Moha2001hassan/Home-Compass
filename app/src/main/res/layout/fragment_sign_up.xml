@@ -153,14 +153,13 @@
             style="@style/CustomButtonStyle"
             android:layout_width="0dp"
             android:layout_height="58dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/sign_up"
+            android:text="Continue"
             android:textSize="20sp"
             app:cornerRadius="13dp"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_move_login" />
 
         <TextView
             android:id="@+id/textView3"
@@ -214,18 +213,40 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Move to Login"
+            android:textStyle="bold"
             android:textColor="@color/medium_orange"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+            app:layout_constraintTop_toBottomOf="@+id/isDonorSwitch" />
 
         <TextView
             android:id="@+id/txt_confirm_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="Confirm Email"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+            app:layout_constraintTop_toTopOf="@+id/txt_move_login" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/isDonorSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="Are you donor or business owner?"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/isDonorSwitch"
+            app:layout_constraintEnd_toStartOf="@+id/isDonorSwitch"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+            app:layout_constraintTop_toTopOf="@+id/isDonorSwitch" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

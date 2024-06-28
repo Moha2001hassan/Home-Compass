@@ -1,9 +1,12 @@
 package com.mohassan.homecompass.home_compass_feature.presentation.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.mohassan.homecompass.auth_feature.data.datastore.UserPreferences
+import com.mohassan.homecompass.auth_feature.data.remote.dto.RegisterRequestBody
 import com.mohassan.homecompass.core.utils.Constants.ADDRESS
 import com.mohassan.homecompass.core.utils.Constants.BIRTHDATE
 import com.mohassan.homecompass.core.utils.Constants.EMAIL
@@ -11,15 +14,36 @@ import com.mohassan.homecompass.core.utils.Constants.FIRST_NAME
 import com.mohassan.homecompass.core.utils.Constants.GENDER
 import com.mohassan.homecompass.core.utils.Constants.LAST_NAME
 import com.mohassan.homecompass.core.utils.Constants.PHONE
-import com.mohassan.homecompass.core.utils.Constants.PHOTO_URI
 import com.mohassan.homecompass.core.utils.SharedPrefManager
-import com.mohassan.homecompass.home_compass_feature.data.remote.dto.UserDetails
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserDetailsViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class UserDetailsViewModel @Inject constructor(
+    private val userPreferences: UserPreferences
+) : ViewModel() {
+
+    private val _userData = MutableStateFlow<RegisterRequestBody?>(null)
+    val userData: StateFlow<RegisterRequestBody?> = _userData
 
     private val _selectedDateLiveData = MutableLiveData<String>()
     val selectedDateLiveData: LiveData<String>
         get() = _selectedDateLiveData
+
+
+    init {
+        fetchUserDetails()
+    }
+
+    private fun fetchUserDetails() {
+        viewModelScope.launch {
+            _userData.value = userPreferences.getUserData()
+        }
+        Log.e("UserDetailsViewModel", "fetchUserDetails: ${userData.value}")
+    }
 
     fun updateSelectedDate(selectedDate: String) {
         _selectedDateLiveData.value = selectedDate
@@ -43,22 +67,6 @@ class UserDetailsViewModel(application: Application) : AndroidViewModel(applicat
         SharedPrefManager.putString(ADDRESS, address)
         SharedPrefManager.putString(PHONE, phone)
     }
-
-    /*
-    fun getUserData(): UserDetails {
-        // Retrieve user data from SharedPreferencesManager
-        return UserDetails(
-            firstName = SharedPrefManager.getString(FIRST_NAME, "My").toString(),
-            lastName = SharedPrefManager.getString(LAST_NAME, "Name").toString(),
-            email = SharedPrefManager.getString(EMAIL, "email@gmail.com").toString(),
-            gender = SharedPrefManager.getString(GENDER, "male").toString(),
-            birthDate = SharedPrefManager.getString(BIRTHDATE, "7/11/2001").toString(),
-            photoURL = SharedPrefManager.getString(PHOTO_URI, "").toString(),
-            address = SharedPrefManager.getString(ADDRESS, "address").toString(),
-            phone = SharedPrefManager.getString(PHONE, "0107101171").toString()
-        )
-    }
-    */
 }
 
 

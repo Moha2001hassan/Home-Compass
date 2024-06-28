@@ -11,14 +11,12 @@ import androidx.navigation.fragment.findNavController
 import com.mohassan.homecompass.R
 import com.mohassan.homecompass.auth_feature.presentation.activity.IntroActivity
 import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
-import com.mohassan.homecompass.core.utils.ShowCustomDialog
 import com.mohassan.homecompass.core.utils.ShowCustomDialog.showCustomDialog
 import com.mohassan.homecompass.databinding.FragmentSettingBinding
-import com.mohassan.homecompass.home_compass_feature.presentation.interfaces.CustomDialogListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingFragment : Fragment(), CustomDialogListener {
+class SettingFragment : Fragment(){
 
     private var _binding: FragmentSettingBinding? = null
     private val viewModel :UserViewModel by viewModels()
@@ -51,11 +49,6 @@ class SettingFragment : Fragment(), CustomDialogListener {
             findNavController().navigateUp()
         }
 
-//        binding.linearDeleteAccount.setOnClickListener {
-//            showCustomDialog(R.drawable.ic_delete_account, requireContext(),this)
-//        }
-
-
         binding.linearLogOut.setOnClickListener {
             showCustomDialog(R.drawable.ic_logout_24, requireContext()) { result ->
                 if (result) {
@@ -72,15 +65,5 @@ class SettingFragment : Fragment(), CustomDialogListener {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    override fun onLogoutClicked() {
-//        val intent = Intent(requireActivity(), IntroActivity::class.java)
-//        startActivity(intent)
-//        requireActivity().finish()
-    }
-
-    override fun onDeleteAccount() {
-        TODO("Not yet implemented")
     }
 }

@@ -24,6 +24,7 @@ class IntroActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        /*
         viewModel.isLoggedIn.observe(this) { isLoggedIn ->
             if (isLoggedIn) {
                 Log.e("IntroActivity", "User is logged in and value is $isLoggedIn")
@@ -43,5 +44,6 @@ class IntroActivity : AppCompatActivity() {
                 )
             }
         }
+        */
     }
 }

@@ -79,4 +79,8 @@ class UserViewModel @Inject constructor(
             userPreferences.setLoggedIn(false)
         }
     }
+
+    suspend fun setIsDonor(isDonor: Boolean) {
+        userPreferences.setIsDonor(isDonor)
+    }
 }
