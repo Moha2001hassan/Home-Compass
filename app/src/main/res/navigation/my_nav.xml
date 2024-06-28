@@ -67,9 +67,6 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_skillsFragment"
-            app:destination="@id/skillsFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -101,9 +98,4 @@
             android:id="@+id/action_confirmEmailFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/skillsFragment"
-        android:name="com.mohassan.homecompass.auth_feature.presentation.fragments.SkillsFragment"
-        android:label="SkillsFragment"
-        tools:layout="@layout/fragment_skills"/>
 </navigation>

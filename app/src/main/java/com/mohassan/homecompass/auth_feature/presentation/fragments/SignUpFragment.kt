@@ -1,12 +1,11 @@
 package com.mohassan.homecompass.auth_feature.presentation.fragments
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -15,13 +14,11 @@ import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewMode
 import com.mohassan.homecompass.core.utils.ProgressDialog
 import com.mohassan.homecompass.core.utils.Resource
 import com.mohassan.homecompass.databinding.FragmentSignUpBinding
-import com.mohassan.homecompass.home_compass_feature.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
-    private var isDonor = false
     private val viewModel: UserViewModel by viewModels()
     private val progressDialog by lazy { ProgressDialog.createProgressDialog(requireActivity()) }
 
@@ -54,8 +51,6 @@ class SignUpFragment : Fragment() {
             viewLifecycleOwner.lifecycleScope.launch {
                 viewModel.setIsDonor(isChecked)
             }
-            binding.btnSignUp.text = if (isChecked) "Sign Up" else "Continue"
-            isDonor = isChecked
         }
 
         // Observe registration status

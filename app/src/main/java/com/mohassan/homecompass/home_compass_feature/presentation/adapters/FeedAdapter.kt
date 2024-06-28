@@ -52,7 +52,7 @@ class FeedAdapter(
             Glide.with(binding.root.context)
                 .load(post.authorPhotoUrl)
                 .centerCrop()
-                .error(R.drawable.profile_img)  // Error image if the URL is invalid
+                .error(R.drawable.man)  // Error image if the URL is invalid
                 .into(binding.imageView)
 
             binding.imgLike.setOnClickListener {

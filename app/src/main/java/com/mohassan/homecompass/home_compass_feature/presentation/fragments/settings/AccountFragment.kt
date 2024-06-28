@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.mohassan.homecompass.auth_feature.presentation.viewmodel.UserViewModel
@@ -71,7 +70,7 @@ class AccountFragment : Fragment() {
     private fun setupViewModel() {
         viewModel.selectedDateLiveData.observe(viewLifecycleOwner) { selectedDate ->
             bottomSheetBinding.tvDate.text = selectedDate
-            Log.e("TestAccountFragment", selectedDate)
+            Log.e("AccountFragment", selectedDate)
         }
     }
 

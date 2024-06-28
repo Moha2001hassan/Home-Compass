@@ -70,10 +70,12 @@ class UserViewModel @Inject constructor(
                 userPreferences.setLoggedIn(true)
                 val userData = userPreferences.getUserData()
                 _userData.value = userData
+
             }
             _loginState.emit(result)
         }
     }
+
     fun logout() {
         viewModelScope.launch {
             userPreferences.setLoggedIn(false)
