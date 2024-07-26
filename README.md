@@ -31,10 +31,3 @@
 <img src="https://github.com/user-attachments/assets/31cd219d-779c-4c31-96f7-97b842d8d818" width="200">
 <img src="https://github.com/user-attachments/assets/e6f6205e-37a3-4e32-9641-ba8dd313fce4" width="200">
 
-
-
-
-
-
-
-![home compass imgs](https://github.com/Moha2001hassan/Home-Compass/assets/108886682/0bade56d-6e79-444e-a09f-5d11be21af0f)
